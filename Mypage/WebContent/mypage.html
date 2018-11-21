@@ -1,0 +1,140 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta content="text/html; charset=euc-kr">
+<title>HTML5</title>
+<style type="text/css">
+	body{
+		margin:0 auto;
+		padding:0 auto;
+	}
+	#header{
+		width: 100%;
+		background-color: #999;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+       -moz-background-size: cover;
+         -o-background-size: cover;
+            background-size: cover;
+		height: 300px;
+	}
+	#menu{  
+		height: 30px; 
+		width: 100%;
+		background-color: #333;
+		} 
+	#menu li{ 
+		width: 16%;
+		list-style: none; 
+	 	color: white;
+	 	background-color: #333;
+	 	display: inline-block;
+	 	line-height: 30px;
+	 	text-align: center;
+		} 
+	#menu .menulink{  
+		text-decoration:none;
+	 	color: white;
+	 	display: block;
+	 	font-size: 12px;
+	 	font-weight: bold;
+	 	} 
+	#menu .menulink:hover{
+	  	color: red; 
+	  	background-color: #444;
+	   }
+	#user_profile_img{
+		left: 200px;
+		width: 180px;
+		height: 180px;
+		background-color: white;
+		z-index: 5;
+	}
+	#user_profile{
+		margin-left: 5px;
+	}
+#change_img{  
+  width: 180px;
+  height: 25px;
+  border-radius: 5px;
+  font-weight: bolder;
+  border-color: transparent;
+  background: #444;
+  color: #fff;
+ cursor: pointer;
+}
+.upload {  
+  opacity: 0;      
+  position: relative;
+}
+.replace {   
+  position: absolute;
+  width: 180px;
+  height: 25px;
+  border-radius: 5px;
+  font-weight: bolder;
+  border-color: transparent;
+  background: #444;
+  color: #fff;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+    <div id="wapper">
+        <!--상단 메뉴-->
+         <div id="menu">
+            <ul>
+                <li><a class="menulink" href="">menu</a></li>
+                <li><a class="menulink" href="">menu</a></li>
+                <li><a class="menulink" href="">menu</a></li>
+                <li><a class="menulink" href="">menu</a></li>
+                <li><a class="menulink" href="">menu</a></li>
+                <li><a class="menulink" href="">menu</a></li>
+            </ul>
+        </div>
+        <!--상단 메뉴 끝-->
+        <!--헤더-->
+        <header id="header">
+        	<div id="user_profile">
+        		<br>
+        		<button class="replace">배경 사진 변경</button>
+        		<input type="file" id="user_profile_background_img_search" accept="image/*" class="upload change_img">
+        		<br>
+        		<br>
+        		<br>
+	            <img id="user_profile_img" src="/Ource/Mypage/WebContent/images/default_user_profile_img.png" alt="프로필사진">
+	            <br><button class="replace">프로필 사진 변경</button>
+	            <input type="file" id="user_profile_img_search" accept="image/*" class="upload change_img">
+        	</div>
+        </header>
+        <!--헤더 끝-->
+    </div>
+    <!--프로필 이미지 가져오는 스크립트-->
+    <script>
+    var file1 = document.querySelector('#user_profile_img_search');
+	file1.onchange = function () { 
+    var fileList1 = file1.files ;
+    var reader1 = new FileReader();
+    reader1.readAsDataURL(fileList1 [0]);
+    reader1.onload = function  () {
+        document.querySelector('#user_profile_img').src = reader1.result ;
+    }; 
+}; 
+    </script>
+    <!--프로필 이미지 가져오는 스크립트 끝-->
+	<!--배경 이미지 가져오는 스크립트-->
+    <script>
+    var file2 = document.querySelector('#user_profile_background_img_search');
+	file2.onchange = function () { 
+    var fileList2 = file2.files ;
+    var reader2 = new FileReader();
+    reader2.readAsDataURL(fileList2 [0]);
+    reader2.onload = function  () {
+        document.querySelector('#header').style.backgroundImage = 'url('+reader2.result+')' ;
+    }; 
+}; 
+    </script>
+    <!--배경 이미지 가져오는 스크립트 끝-->
+</body>
+</html>
