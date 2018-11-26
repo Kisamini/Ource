@@ -11,8 +11,8 @@ public class ConnDatabase {
 	
 	public static void doConn(){
 		try{
-			String user = "yjm";
-			String pw = "ource";
+			String user = "ource";
+			String pw = "ourvoice";
 			String url = "jdbc:oracle:thin:@52.79.235.41:1521:xe";
 			
 			Class.forName("oracle.jdbc.driver.OracleDriver");

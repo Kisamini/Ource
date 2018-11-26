@@ -3,17 +3,17 @@
 <jsp:useBean id="sc" class="com.example.libs.SelectController" />
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-<c:set var="flag" value="${sc.loginMember(param.inputEmail3, param.inputPassword3)}" />
-<c:set var="member" value="${sc.selectMember(param.inputEmail3)}" />
+<c:set var="flag" value="${sc.loginUser(param.userID, param.userPW)}" />
+<c:set var="member" value="${sc.selectUser(param.userID)}" />
 
 <c:if test="${flag eq 1}">
 <%
-	session.setAttribute("email", request.getParameter("inputEmail3"));
-	MemberVO member = sc.selectMember(request.getParameter("inputEmail3"));
+	session.setAttribute("userid", request.getParameter("userID"));
+	MemberVO member = sc.selectUser(request.getParameter("userID"));
     //session.setAttribute("passwd", member.getPasswd());
 %>
 	<script>
-		alert("${param.inputEmail3}님! 환영합니다.");
+		alert("${param.userID}님! 환영합니다.");
 		//location.href = "index.html";
 		
 	</script>
