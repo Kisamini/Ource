@@ -8,7 +8,7 @@
           <div class="menu">
             <ul>
                 <li><a id="my_info" class="menulink" href="">내 정보</a></li>
-                <li><a class="menulink" href="">menu</a></li>
+                <li><a id="my_contents" class="menulink" href="">게시글</a></li>
                 <li><a class="menulink" href="">menu</a></li>
                 <li><a class="menulink" href="">menu</a></li>
             </ul>

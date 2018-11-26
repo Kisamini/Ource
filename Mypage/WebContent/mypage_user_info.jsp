@@ -1,26 +1,30 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<script src="script/jquery.min.js"></script>
+<script src="script/user_info.js"></script>
 <link rel="stylesheet" type="text/css" href="css/user_info.css">
-  <div class="form-row">
-  <div class="form-group col-md-2">
+  <div class="user_info">
+  <div>
       <label for="inputName">이름</label>
-      <input type="text" class="form-control" id="inputName" readonly="readonly">
+      <input type="text" class="input" id="inputName" readonly>
     </div>
-    <div class="form-group col-md-2">
+    <div>
       <label for="inputAge">나이</label>
-      <input type="text" class="form-control" id="inputAge" readonly="readonly">
+      <input type="text" class="input" id="inputAge" readonly="readonly">
     </div>
-    <div class="form-group col-md-2">
+    <div>
       <label for="inputGender">성별</label>
-      <input type="text" class="form-control" id="inputGender" readonly="readonly">
+      <input type="text" class="input" id="inputGender" readonly="readonly">
     </div>
-    <div class="form-group col-md-3">
+    <div>
       <label for="inputAddress">주소</label>
-      <input type="text" class="form-control" id="inputAddress" readonly="readonly">
+      <input type="text" class="input" id="inputAddress" readonly="readonly">
     </div>
-    <div class="form-group col-md-2">
+    <div>
       <label for="inputPhone">핸드폰</label>
-      <input type="text" class="form-control" id="inputPhone" readonly="readonly">
+      <input type="text" class="input" id="inputPhone" readonly="readonly">
+    </div>
+     <div class="user_info_update_btn">
+      <input type="button" id="user_info_update" value="수정하기">
     </div>
   </div>

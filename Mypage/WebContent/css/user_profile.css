@@ -49,3 +49,12 @@
   cursor: pointer;
 }
 /*----------------button css---------------------*/
+/* ---------------submit css-------------------- */
+#user_profile_update_set{
+  display: inline-block;
+  position: absolute;
+  left: 80%;
+
+}
+/* ---------------submit css-------------------- */
+

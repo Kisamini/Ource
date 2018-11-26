@@ -20,5 +20,5 @@
 <c:import url="${profile}" />
 <c:import url="${user_nav}" />
 <c:import url="${user_friends}" />
-</body>
+</body> 
 </html>

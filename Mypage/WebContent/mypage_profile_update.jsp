@@ -13,15 +13,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>마이 페이지</title>
-<script src="script/jquery.min.js"></script>
-<script src="script/user_nav.js"></script>
-<script src="script/get_img.js"></script>
-<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-<link rel="stylesheet" type="text/css" href="css/top_nav.css">
-<link rel="stylesheet" type="text/css" href="css/user_friends.css">
-<link rel="stylesheet" type="text/css" href="css/user_profile.css">
-<link rel="stylesheet" type="text/css" href="css/user_nav.css">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
 <c:import url="${top_nav}" />
