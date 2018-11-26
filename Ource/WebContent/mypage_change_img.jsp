@@ -7,6 +7,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
+
 <fmt:requestEncoding value="utf-8" />
 <sql:setDataSource driver="oracle.jdbc.driver.OracleDriver" 
 					url="jdbc:oracle:thin:@52.79.235.41:1521:xe" 
@@ -28,6 +29,7 @@
 	
 	String dbProfileImg = pageContext.getAttribute("oldProfileImg1").toString();
 	String dbBackgroundImg = pageContext.getAttribute("oldBackgroundImg1").toString();
+
     request.setCharacterEncoding("UTF-8");
  
     // 10Mbyte 제한
@@ -51,6 +53,7 @@
     FileOutputStream fout = null;
     long currentTime = System.currentTimeMillis(); 
     SimpleDateFormat simDf = new SimpleDateFormat("yyyyMMddHHmmss"); 
+
     
     try{
  
@@ -86,6 +89,7 @@
             fin.close();
             fout.close();
             oldFile1.delete();
+
         	}
         }
         if(uploadFile2!=null){
