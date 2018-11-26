@@ -1,0 +1,37 @@
+
+/*----------------user_nav css---------------------*/
+.user_nav{
+  background-color: #f2f2f2;
+  width: 70%;
+  height:500px;
+  float: left
+}
+.user_nav ul{
+  margin:0;
+} 
+.menu{  
+    height: 30px; 
+    width: 100%;
+    background-color: #333;
+    } 
+  .menu li{ 
+    width: 22%;
+    list-style: none; 
+    color: white;
+    background-color: #333;
+    display: inline-block;
+    line-height: 30px;
+    text-align: center;
+    } 
+  .menu .menulink{  
+    text-decoration:none;
+    color: white;
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+    } 
+  .menu .menulink:hover{
+      color: red; 
+      background-color: #444;
+     }
+/*----------------user_nav css---------------------*/
