@@ -29,7 +29,7 @@
             	<li><img id="user_friends_img" src="images/default_user_profile_img.png" alt="친구 이미지" draggable="false"><a href="#">${friends['username']}</a></li>
             </c:if>
             <c:if test="${friends['profile_img'] ne '0'}" >
-            	<li><img id="user_friends_img" draggable="false" src="<c:url value='upload/${friends["profile_img"]}'>" alt="친구 이미지"><a href="#">${friends['username']}</a></li>
+            	<li><img id="user_friends_img" draggable="false" src="<c:url value='upload/${friends["profile_img"]}'/>" alt="친구 이미지"><a href="#">${friends['username']}</a></li>
             </c:if>
             </c:forEach>
           </ul>
