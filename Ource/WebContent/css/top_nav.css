@@ -1,20 +1,20 @@
-/*----------------top_nav css---------------------*/
+    /*----------------top_nav css---------------------*/
 .top_nav{
   width: 100%;
   height: 100px;
-  display: inline-block;
 }
+.top_nav *{display: inline-block;}
 .top_nav img{
   height: 90px;
-  overflow-y: hidden;
+  /*overflow-y: hidden;*/
 }
 .top_search{
   width: 100px;
   vertical-align: middle;
   white-space: nowrap;
   position: relative;
-  left: 40%;
-  top:-60%;
+  left: 10%;
+  top:-40%;
 }
 .top_search input#search{
   width: 200px;
@@ -37,7 +37,7 @@
 }
 .top_search .icon{
   position: absolute;
-  top: 50%;
+  top: 5%;
   margin-left: 17px;
   margin-top: 5px;
   z-index: 1;
@@ -48,8 +48,48 @@
     background: #FFF;
   }
   .top_items{
-    position: absolute;
+     position: absolute;
     left: 80%;
+    top: 30px; 
+  }
+  .top_goto_mypage{
+    position:absolute;
+    left: 60%;
     top: 30px;
   }
+  .top_goto_mypage p{
+    position:relative;
+    top:-19px;
+    left: 5px;
+  }
+  .top_nav>.top_goto_mypage img{
+   width: 40px; 
+   height: 40px;
+   object-fit: cover;
+   object-position: top;
+   border-radius: 50%;
+   margin:5px;
+}
+ @media screen and (min-width: 1184px) {
+  .top_search{
+    left: 30%;
+  }
+} 
+ @media screen and (max-width: 470px) {
+  .top_items{
+    display: none;
+  }
+} 
+@media screen and (max-width: 713px) {
+  .top_search{
+    display: none;
+  }
+   .top_items{
+    left: 70%;
+  }
+  .top_goto_mypage{
+    left: 50%;
+  }
+}
+
 /*----------------top_nav css---------------------*/
