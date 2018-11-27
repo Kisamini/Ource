@@ -43,7 +43,7 @@
         </div>
           <c:if test="${rs.background_img eq '0'}">
     <script>
-    document.querySelector('#header').style.backgroundColor = "#999";
+    document.querySelector('#header').style.backgroundColor = "#FFF";
     </script>
     </c:if>
     <c:if test="${rs.background_img ne '0'}">

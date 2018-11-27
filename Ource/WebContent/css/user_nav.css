@@ -1,7 +1,7 @@
 
 /*----------------user_nav css---------------------*/
 .user_nav{
-  background-color: #f2f2f2;
+  background-color: #fff;
   width: 70%;
   height:500px;
   float: left
@@ -12,13 +12,13 @@
 .menu{  
     height: 30px; 
     width: 100%;
-    background-color: #333;
+    background-color: #2866d8;
     } 
   .menu li{ 
     width: 22%;
     list-style: none; 
     color: white;
-    background-color: #333;
+    background-color: #2866d8;
     display: inline-block;
     line-height: 30px;
     text-align: center;
@@ -31,7 +31,7 @@
     font-weight: bold;
     } 
   .menu .menulink:hover{
-      color: red; 
-      background-color: #444;
+      color: white; 
+      background-color: #4fdcff;
      }
 /*----------------user_nav css---------------------*/

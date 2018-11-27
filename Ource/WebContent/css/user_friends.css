@@ -1,12 +1,14 @@
 /*----------------user_friends css---------------------*/
 .user_friends{display: inline-block;}
 .user_friends{
-  
-  background-color: #CCC;
+  background-color: #FFF;
   width: 30%;
   height:500px;
-  overflow-y: auto;
   font-size: 20px;
+   overflow-y: auto;
+}
+.user_friends_border{
+  border:5px solid #2866d8 ;
 }
 .user_friends li {
   list-style: none;
@@ -18,13 +20,13 @@
   color:black;
 }
 .user_friends::-webkit-scrollbar {
-  width: 0.7em;
+  width: 1px;
   background: transparent;
 }
 .user_friends::-webkit-scrollbar-thumb {
-  background: #CCC;
+  background: #FFF;
 }
-.user_friends>ul>li>img{
+.user_friends>.user_friends_border>ul>li>img{
    width: 50px; 
    height: 50px;
    object-fit: cover;

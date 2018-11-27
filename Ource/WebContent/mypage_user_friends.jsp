@@ -22,6 +22,7 @@
 <link rel="stylesheet" type="text/css" href="css/user_friends.css">
 <!--user friends-->
         <div class="user_friends">
+        	<div class="user_friends_border">
           <ul>
           	<c:forEach items="${names.rows}" var="friends">
           	<c:if test="${friends['profile_img'] eq '0'}" >
@@ -32,5 +33,6 @@
             </c:if>
             </c:forEach>
           </ul>
+          </div>
         </div>
 <!--user friends end-->        
