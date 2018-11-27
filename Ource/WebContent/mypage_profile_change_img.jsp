@@ -30,10 +30,10 @@
             <br>
             <br>
             <c:if test="${rs.profile_img eq '0'}">
-	            <img title="프로필 사진" id="user_profile_img" src="images/default_user_profile_img.png" alt="프로필 사진">
+	            <img title="프로필 사진" id="user_profile_img" src="images/default_user_profile_img.png" alt="프로필 사진" draggable="false">
 	            </c:if>
 	            <c:if test="${rs.profile_img ne '0'}">
-	            <img title="프로필 사진" id="user_profile_img" src="<c:url value='upload/${rs.profile_img}'/>" alt="프로필 사진">
+	            <img title="프로필 사진" id="user_profile_img" src="<c:url value='upload/${rs.profile_img}'/>" alt="프로필 사진" draggable="false">
 	            </c:if>
               <br><button class="replace">프로필 이미지 변경</button>
               <input type="file" id="user_profile_img_search" name="user_profile_img_search" accept="image/*" class="upload change_img"/>
