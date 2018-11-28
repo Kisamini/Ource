@@ -12,7 +12,7 @@
 <c:catch var="error">
 	 <sql:query dataSource = "${conn}" var = "profile">
             select a.username, b.profile_img from user_profile a, user_profile_img b where a.id = b.id and a.id = ?
-            <sql:param>test1</sql:param>
+            <sql:param>${sessionScope.sessionId }</sql:param>
          </sql:query>
 </c:catch>
 <c:if test="${not(empty error)}">
@@ -33,10 +33,10 @@
               <div class="top_goto_mypage">
               <c:forEach items="${profile.rows}" var="my">
               	<c:if test="${my.profile_img eq '0'}">
-                <a href="mypage_main.jsp"><img src="images/default_user_profile_img.png" alt="내정보 보기" draggable="false"><p>${my.username}</p></a>
+                <a href="mypage_main.jsp?id=${sessionScope.sessionId }"><img src="images/default_user_profile_img.png" alt="내정보 보기" draggable="false"><p>${my.username}</p></a>
                 </c:if>
                 <c:if test="${my.profile_img ne '0'}">
-                <a href="mypage_main.jsp"><img src="<c:url value='upload/${my.profile_img}'/>" alt="내정보 보기" draggable="false"><p>${my.username}</p></a>
+                <a href="mypage_main.jsp?id=${sessionScope.sessionId }"><img src="<c:url value='upload/${my.profile_img}'/>" alt="내정보 보기" draggable="false"><p>${my.username}</p></a>
                 </c:if>
                 </c:forEach>
               </div>

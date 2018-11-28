@@ -13,8 +13,8 @@ create table user_profile
 CREATE TABLE user_profile_img
 ( 
 	id varchar2(20),
-	profile_img VARCHAR2(4000) DEFAULT '0' NOT null,
-	background_img VARCHAR2(4000) default '0' NOT null,
+	profile_img VARCHAR2(4000) DEFAULT '0.png' NOT null,
+	background_img VARCHAR2(4000) default '0.png' NOT null,
   CONSTRAINT user_profile_img_pk PRIMARY KEY (id),
 	CONSTRAINT user_profile_img_fk FOREIGN KEY (id) REFERENCES user_profile(id)
 );

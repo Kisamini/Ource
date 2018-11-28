@@ -9,13 +9,23 @@
 					user="ksm" 
 					password="ource"
 					var="conn"/>
+
+<!-- 자신의 친구 -->
+<c:if test="${param.id eq sessionScope.sessionId }">
 <c:catch var="error">
 	 <sql:query dataSource = "${conn}" var = "names">
             select a.username, b.profile_img from user_profile a, user_profile_img b where a.id = b.id and a.id != ?
-            <sql:param>test1</sql:param>
+            <sql:param>${param.id}</sql:param>
          </sql:query>
 </c:catch>
+</c:if>
+<!-- 자신의 친구 -->
 
+<!-- 친구의 친구 -->
+<c:if test="${param.id ne sessionScope.sessionId }">
+
+</c:if>
+<!-- 친구의 친구 -->
 <c:if test="${not(empty error)}">
 <p style="color:red;font-size:2em;">Error : ${error}</p>
 </c:if>
@@ -36,3 +46,5 @@
           </div>
         </div>
 <!--user friends end-->        
+
+

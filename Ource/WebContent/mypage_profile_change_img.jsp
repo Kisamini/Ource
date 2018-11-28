@@ -12,7 +12,7 @@
 <c:catch var="error">
 	 <sql:query dataSource = "${conn}" var = "profile">
             select profile_img, background_img from user_profile_img where id=?
-            <sql:param>test1</sql:param>
+            <sql:param>${sessionScope.sessionId}</sql:param>
          </sql:query>
 </c:catch>
 <c:forEach items="${profile.rows}" var="rs">
@@ -23,7 +23,7 @@
  <div id="header">
           <div class="user_profile">
             <button class="replace">배경 이미지 변경</button>
-            <form enctype="multipart/form-data" action="mypage_change_img.jsp" method="post">
+            <form enctype="multipart/form-data" action="d.jsp" method="post">
             <input type="file" id="user_profile_background_img_search" name="user_profile_background_img_search" accept="image/*" class="upload change_img">
             <br>
             <br>

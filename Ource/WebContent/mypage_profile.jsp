@@ -12,7 +12,7 @@
 <c:catch var="error">
 	 <sql:query dataSource = "${conn}" var = "profile">
             select profile_img, background_img from user_profile_img where id=?
-            <sql:param>test1</sql:param>
+            <sql:param>${param.id }</sql:param>
          </sql:query>
 </c:catch>
 <c:if test="${not(empty error)}">
@@ -53,3 +53,4 @@
     </c:if>
         <!--user profile end-->
         </c:forEach>
+        <form id="goto_img_change" action="mypage_profile_update.jsp"><input type="hidden" name="id" value="${param.id}"/></form>
