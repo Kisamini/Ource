@@ -1,8 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="info" value="${param.id }" scope="session"/>
     <script src="script/jquery.min.js"></script>
     <script src="script/user_nav.js"></script>
     <link rel="stylesheet" type="text/css" href="css/user_nav.css">
+
   <!--user navigation-->
         <div class="user_nav">
           <div class="menu">
@@ -13,10 +16,10 @@
                 <li><a class="menulink" href="">menu</a></li>
             </ul>
           </div>
-          <!--user navigation end-->
+          <!--user menu end-->
           <!--user contents-->
           <div class="contents" id="contents">
-           
+
           </div>
           <!--user contents end-->
         </div>

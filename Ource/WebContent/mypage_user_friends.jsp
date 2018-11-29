@@ -14,7 +14,7 @@
 <c:if test="${param.id eq sessionScope.sessionId }">
 <c:catch var="error">
 	 <sql:query dataSource = "${conn}" var = "names">
-            select a.username, b.profile_img from user_profile a, user_profile_img b where a.id = b.id and a.id != ?
+            select a.id, a.username, b.profile_img from user_profile a, user_profile_img b where a.id = b.id and a.id != ?
             <sql:param>${param.id}</sql:param>
          </sql:query>
 </c:catch>
@@ -23,7 +23,7 @@
 
 <!-- 친구의 친구 -->
 <c:if test="${param.id ne sessionScope.sessionId }">
-
+<!-- 친구의 친구가져오는 sql문 -->
 </c:if>
 <!-- 친구의 친구 -->
 <c:if test="${not(empty error)}">
@@ -36,10 +36,10 @@
           <ul>
           	<c:forEach items="${names.rows}" var="friends">
           	<c:if test="${friends['profile_img'] eq '0'}" >
-            	<li><img id="user_friends_img" src="images/default_user_profile_img.png" alt="친구 이미지" draggable="false"><a href="#">${friends['username']}</a></li>
+            	<li><a href="mypage_main.jsp?id=${friends.id}"><img id="user_friends_img" src="images/default_user_profile_img.png" alt="친구 이미지" draggable="false">${friends.username}</a></li>
             </c:if>
             <c:if test="${friends['profile_img'] ne '0'}" >
-            	<li><img id="user_friends_img" draggable="false" src="<c:url value='upload/${friends["profile_img"]}'/>" alt="친구 이미지"><a href="#">${friends['username']}</a></li>
+            	<li><a href="mypage_main.jsp?id=${friends.id}"><img id="user_friends_img" draggable="false" src="<c:url value='upload/${id}/${friends.profile_img}'/>" alt="친구 이미지">${friends.username}</a></li>
             </c:if>
             </c:forEach>
           </ul>

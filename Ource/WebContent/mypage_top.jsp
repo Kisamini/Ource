@@ -36,7 +36,7 @@
                 <a href="mypage_main.jsp?id=${sessionScope.sessionId }"><img src="images/default_user_profile_img.png" alt="내정보 보기" draggable="false"><p>${my.username}</p></a>
                 </c:if>
                 <c:if test="${my.profile_img ne '0'}">
-                <a href="mypage_main.jsp?id=${sessionScope.sessionId }"><img src="<c:url value='upload/${my.profile_img}'/>" alt="내정보 보기" draggable="false"><p>${my.username}</p></a>
+                <a href="mypage_main.jsp?id=${sessionScope.sessionId }"><img src="<c:url value='upload/${sessionScope.sessionId}/${my.profile_img}'/>" alt="내정보 보기" draggable="false"><p>${my.username}</p></a>
                 </c:if>
                 </c:forEach>
               </div>

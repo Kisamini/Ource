@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <script src="script/jquery.min.js"></script>
 <script src="script/user_info.js"></script>
 <link rel="stylesheet" type="text/css" href="css/user_info.css">
@@ -24,7 +25,14 @@
       <label for="inputPhone">핸드폰</label>
       <input type="text" class="input" id="inputPhone" readonly="readonly">
     </div>
+    <div class="user_info_more_btn">
+    <a href=""><img src="images/more1.png" title="더보기" draggable="false"/></a>
+    </div>
      <div class="user_info_update_btn">
-      <input type="button" id="user_info_update" value="수정하기">
+     <c:if test="${sessionScope.sessionId eq sessionScope.info }">
+      <input type="button" id="user_info_update" value="수정하기" />
+      </c:if>
+       <c:if test="${sessionScope.sessionId ne sessionScope.info}">
+      </c:if>
     </div>
   </div>

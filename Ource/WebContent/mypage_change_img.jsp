@@ -38,8 +38,8 @@
     // 웹서버 컨테이너 경로
     String root = request.getSession().getServletContext().getRealPath("/");
     // 파일 저장 경로
-    String savePath = root + "upload/";
-    File dir = new File(savePath+id);
+    String savePath = root + "upload/"+id;
+    File dir = new File(savePath);
 	if(!dir.exists()){
 		dir.mkdirs();
 	}
@@ -72,11 +72,10 @@
         newFileName1 = "b"+simDf.format(new Date(currentTime)) +"."+ uploadFile1.substring(uploadFile1.lastIndexOf(".")+1);
          
         // 업로드된 파일 객체 생성
-        File oldFile1 = new File(savePath+id+ uploadFile1);
-        System.out.println(oldFile1);
+        File oldFile1 = new File(savePath+ uploadFile1);
          
         // 실제 저장될 파일 객체 생성
-        File newFile1 = new File(savePath+id+ newFileName1);
+        File newFile1 = new File(savePath+ newFileName1);
  
         // 파일명 rename
         if(!oldFile1.renameTo(newFile1)){
@@ -100,9 +99,9 @@
             newFileName2 = "f"+simDf.format(new Date(currentTime)) +"."+ uploadFile2.substring(uploadFile2.lastIndexOf(".")+1);
              
             // 업로드된 파일 객체 생성
-            File oldFile2 = new File(savePath+id + uploadFile2);
+            File oldFile2 = new File(savePath + uploadFile2);
             // 실제 저장될 파일 객체 생성
-            File newFile2 = new File(savePath+id + newFileName2);
+            File newFile2 = new File(savePath + newFileName2);
      
             // 파일명 rename
             if(!oldFile2.renameTo(newFile2)){

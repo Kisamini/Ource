@@ -35,20 +35,28 @@
 	            <img title="프로필 사진" id="user_profile_img" src="images/default_user_profile_img.png" alt="프로필 사진" draggable="false">
 	            </c:if>
 	            <c:if test="${rs.profile_img ne '0'}">
-	            <img title="프로필 사진" id="user_profile_img" src="<c:url value='upload/${rs.profile_img}'/>" alt="프로필 사진" draggable="false">
+	            <img title="프로필 사진" id="user_profile_img" src="<c:url value='upload/${param.id}/${rs.profile_img}'/>" alt="프로필 사진" draggable="false">
 	            </c:if>
               <br>
-              <button title="정보 수정" id="user_profile_update" name="user_profile_update" class="replace">프로필 사진 변경</button>
+              <!-- 정보 수정은 자신만 할수있음으로 세션아이디와 파라미터 아이디가 같으면 추가 -->
+            <c:if test="${param.id eq sessionScope.sessionId }">
+  				<button title="정보 수정" id="user_profile_update" name="user_profile_update" class="replace">프로필 사진 변경</button>
+			</c:if>
+			<!-- 정보 수정은 자신만 할수있음으로 세션아이디와 파라미터 아이디가 다르면 없음 --> 
+            <c:if test="${param.id ne sessionScope.sessionId }">
+  				<br>
+			</c:if>
+            
         	</div>
         </div>
           <c:if test="${rs.background_img eq '0'}">
     <script>
-    document.querySelector('#header').style.backgroundColor = "#FFF";
+    document.querySelector('#header').style.backgroundColor = "#f2f2f2";
     </script>
     </c:if>
     <c:if test="${rs.background_img ne '0'}">
     <script>
-    document.querySelector('#header').style.backgroundImage = "url('<c:url value="upload/${rs.background_img}"/>')" ;
+    document.querySelector('#header').style.backgroundImage = "url('<c:url value="upload/${param.id}/${rs.background_img}"/>')" ;
     </script>
     </c:if>
         <!--user profile end-->
