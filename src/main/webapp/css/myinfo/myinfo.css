@@ -1,0 +1,16 @@
+@CHARSET "UTF-8";
+#contents {max-width: 935px;margin:0 auto;margin-top:100px;display:flex;border:1px solid #cecece;}
+#contents .profile_menu {border-right:1px solid #cecece;;}
+#contents .profile_menu a {width:230px;padding: 16px 36px;display:block;text-decoration:none;color: #555;box-sizing:  border-box;margin-left:  2px;position:  relative;}
+#contents .profile_menu a:hover {background: #f3f3f3;}
+#contents .profile_menu a::before {content:'';position:  absolute;left: -2px;width:  2px;height: 100%;top: 0;}
+#contents .profile_menu a:hover::before {background: #b7b7b7;}
+#contents .profile_menu a.nonPageMove {font-weight:  bold;}
+#contents .profile_menu a.nonPageMove::before {content:'';background: #111;}
+
+#contents>article {width:100%;padding: 50px 0;}
+#contents .myinfo {height:50px;line-height:50px;}
+#contents .myinfo img {width:35px;border:1px solid #cecece;border-radius:100%;margin-top: 7px;}
+#contents .myinfo .columnName {width: 230px;text-align:right;display:  inline-block;font-weight:  bold;padding-right: 50px;height:  50px;}
+#contents .myinfo .profileValue {display:inline-block;}
+#contents .myinfo.profile>span {float: left;}
