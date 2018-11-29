@@ -39,12 +39,13 @@
 	            </c:if>
               <br>
               <!-- 정보 수정은 자신만 할수있음으로 세션아이디와 파라미터 아이디가 같으면 추가 -->
-            <c:if test="${param.id eq sessionScope.sessionId }">
-  				<button title="정보 수정" id="user_profile_update" name="user_profile_update" class="replace">프로필 사진 변경</button>
-			</c:if>
+              <c:if test="${param.id eq sessionScope.sessionId }">
+  				<button title="프로필 이미지 수정" id="user_profile_update" name="user_profile_update" class="replace">프로필 사진 변경</button>
+				</c:if>
+              <button class="follower">팔로워 ${follower}</button>
 			<!-- 정보 수정은 자신만 할수있음으로 세션아이디와 파라미터 아이디가 다르면 없음 --> 
             <c:if test="${param.id ne sessionScope.sessionId }">
-  				<br>
+  				<input type="button" value="팔로우 하기" id="user_do_follow" class="follow" title="팔로우 하기" />
 			</c:if>
             
         	</div>

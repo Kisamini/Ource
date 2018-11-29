@@ -57,8 +57,15 @@
     left: 60%;
     top: 25px;
   }
+  .top_goto_mypage a:link,a:hover,a:visited{
+    text-decoration: none;
+    color:#2866d8;
+  }
+
   .top_goto_mypage p{
     position:relative;
+    font-size: 20px;
+    font-weight: bolder;
     top:-19px;
     left: 5px;
   }

@@ -49,6 +49,9 @@
   color: #fff;
   cursor: pointer;
 }
+.replace:hover{
+  background-color:#41acf4;
+}
 /*----------------button css---------------------*/
 /* ---------------submit css-------------------- */
 #user_profile_update_set{
@@ -58,4 +61,36 @@
 
 }
 /* ---------------submit css-------------------- */
+/* ---------------follow css-------------------- */
+.follow{
+  position: absolute;
+  left: 320px;
+  width: 100px;
+  height: 25px;
+  border-radius: 5px;
+  font-weight: bolder;
+  border-color: transparent;
+  background: #4195f4;
+  color: #fff;
+  cursor: pointer;
+}
+.follow:hover{
+  background-color:#41acf4;
+}
+.follower{
+  position: absolute;
+  left: 200px;
+  width: 100px;
+  height: 25px;
+  border-radius: 5px;
+  font-weight: bolder;
+  border-color: transparent;
+  background: #4195f4;
+  color: #fff;
+  cursor: pointer;
+}
+.follower:hover{
+   background-color:#41acf4;
+}
+/* ---------------follow css-------------------- */
 
