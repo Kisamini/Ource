@@ -1,9 +1,5 @@
 $(function(){
-        // 프로필 수정
-      $("#user_profile_update").bind('click',function(){
-        $("#goto_img_change").submit();
-      });
-      // 프로필 수정 끝
+   
       //user_nav menu event
       $("#my_info").bind('click',function(evt){
         evt.preventDefault();

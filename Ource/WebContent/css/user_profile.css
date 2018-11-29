@@ -64,7 +64,7 @@
 /* ---------------follow css-------------------- */
 .follow{
   position: absolute;
-  left: 320px;
+  left: 440px;
   width: 100px;
   height: 25px;
   border-radius: 5px;
@@ -76,6 +76,21 @@
 }
 .follow:hover{
   background-color:#41acf4;
+}
+.unfollow{
+  position: absolute;
+  left: 440px;
+  width: 100px;
+  height: 25px;
+  border-radius: 5px;
+  font-weight: bolder;
+  border-color: transparent;
+  background: #ef3e3e;
+  color: #fff;
+  cursor: pointer;
+}
+.unfollow:hover{
+  background-color:#f95959;
 }
 .follower{
   position: absolute;
@@ -91,6 +106,21 @@
 }
 .follower:hover{
    background-color:#41acf4;
+}
+.following{
+  position: absolute;
+  left: 320px;
+  width: 100px;
+  height: 25px;
+  border-radius: 5px;
+  font-weight: bolder;
+  border-color: transparent;
+  background: #4195f4;
+  color: #fff;
+  cursor: pointer;
+}
+.following:hover{
+  background-color:#41acf4;
 }
 /* ---------------follow css-------------------- */
 
