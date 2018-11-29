@@ -19,13 +19,12 @@
     <script src="script/jquery.min.js"></script>
     <script src="script/get_img.js"></script>
     <link rel="stylesheet" type="text/css" href="css/user_profile.css">
-  
+  	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
  <div id="header">
           <div class="user_profile">
             <button class="replace">배경 이미지 변경</button>
             <form enctype="multipart/form-data" action="mypage_change_img.jsp?id=${sessionScope.sessionId}" method="post">
             <input type="file" id="user_profile_background_img_search" name="user_profile_background_img_search" accept="image/*" class="upload change_img">
-            <br>
             <br>
             <br>
             <br>
