@@ -28,7 +28,7 @@ public class MyInfoController {
 			
 			model.addAttribute("myinfo", userVO);
 		} catch (Exception e) {
-			e.printStackTrace();
+			log.debug(e.getMessage());
 		}
 		
 		return "myinfo/myinfo";
