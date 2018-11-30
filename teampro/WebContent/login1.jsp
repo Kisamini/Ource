@@ -11,16 +11,19 @@
 	<link rel="stylesheet" href="css/min.css">
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>
+	
+	
 	<title>[Ource]우리들의 목소리</title>
-	<script>
+    <script>
 	$(function(){
 		$("#btnLogin").bind("click", function(){
 			$(".loginform").attr("action", "login.jsp");
 		});
 	});
    </script>
+
    <style type="text/css">
-     .a{margin-left:auto; margin-right:auto;}
+     .a{margin-left:auto; margin-right:auto; margin-top:5%;}
      #btnLogin{background-color:#ABC3DB; height:45px; width:500px}
      .form-control{margin-right:12px;}
    </style>
@@ -30,7 +33,7 @@
 		
 	
 		<form method="post" class="loginform">
-			<table class="a" style="text-align:center; width:500px; heigh:1000px">
+			<table class="a" style="text-align:center;">
 			<thead>
 				<tr style="height: 110px;">
 					<th colspan="3" id="logo"> <img src="./image/logo.jpg" class="img-fluid" style="width: 280px; height: 200px;" align="center"/> </th>
@@ -41,19 +44,19 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr><td colspan="3" style="background-color:#F4F4F4"><br/><br/></td></tr>
+				<tr><td colspan="3" id="bbb" ><br/><br/></td></tr>
 				<tr>
-					<td style="width:160px;height:50px;background-color:#F4F4F4"><h5> 아이디</h5></td>
-					<td style="background-color:#F4F4F4"><input class="form-control" type="text" name="userID" maxLength="20" placeholder="아이디를 입력하세요."></td>
+					<td style="width:160px;height:50px;background-color:#F4F4F4"><h4> ID</h4></td>
+					<td style="background-color:#F4F4F4"><input class="form-control" type="text" name="userID" maxLength="20" placeholder="아이디를 입력하세요." style="width:90%" /></td>
 				</tr>
 				<tr>
-					<td style="width:160px;height:50px;background-color:#F4F4F4"; align="center"><h5> 비밀번호</h5></td>
-					<td colspan="2" style="background-color:#F4F4F4"; align="left"><input class="form-control" type="text" name="userPW" maxLength="20" placeholder="비밀번호를 입력하세요."></td></tr>
-				<tr><td colspan="3" style="background-color:#F4F4F4"><br/></td></tr>
+					<td style="width:160px;height:50px;background-color:#F4F4F4"; align="center"><h4> Password</h4></td>
+					<td colspan="2" style="background-color:#F4F4F4"; align="left"><input class="form-control" type="text" name="userPW" maxLength="20" placeholder="비밀번호를 입력하세요." style="width:90%"/></td></tr>
+				<tr><td colspan="3" style="background-color:#F4F4F4"><br/><br/></td></tr>
 					
 			    <tr>
 					<td style="text-align: right" colspan="3"> 
-					<input id="btnLogin" type="submit" value="로그인"/>
+					<input type="submit" class="btn btn-info btn-lg" id="btnLogin" value="로그인"></input>
 				</tr>
 				
 			</tbody>
