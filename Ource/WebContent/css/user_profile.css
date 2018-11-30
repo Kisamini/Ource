@@ -11,16 +11,16 @@
             background-size: cover;
     height: 300px;
   }
-	#user_profile_img{
-		left: 200px;
-		width: 180px;
-		height: 180px;
-		background-color: white;
-		z-index: 5;
-	}
-	.user_profile{
-		margin-left: 5px;
-	}
+  #user_profile_img{
+    left: 200px;
+    width: 180px;
+    height: 180px;
+    background-color: white;
+    z-index: 5;
+  }
+  .user_profile{
+    margin-left: 5px;
+  }
 /*----------------user_profile css---------------------*/
 /*----------------input img css---------------------*/
 .change_img{  
@@ -52,7 +52,7 @@
   cursor: pointer;
 }
 .replace:hover{
-  background-color:#41acf4;
+  background-color:#0248ca;
 }
 /*----------------button css---------------------*/
 /* ---------------submit css-------------------- */

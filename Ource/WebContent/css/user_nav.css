@@ -5,11 +5,13 @@
   top:400px;
   background-color: #fff;
   width: 70%;
-  height:500px;
   float: left
 }
 .user_nav ul{
-  margin:0;
+  list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 } 
 .menu{  
     height: 30px; 
@@ -17,14 +19,18 @@
     background-color: #2866d8;
     } 
   .menu li{ 
-    width: 22%;
-    list-style: none; 
+    width: 24%;
+    float: left;
     color: white;
     background-color: #2866d8;
-    display: inline-block;
+    display: block;
     line-height: 30px;
     text-align: center;
+     border-right:1px solid #bbb;
     } 
+   .menu li:last-child {
+    border-right: none;
+}
   .menu .menulink{  
     text-decoration:none;
     color: white;
@@ -32,8 +38,16 @@
     font-size: 15px;
     font-weight: bold;
     } 
-  .menu .menulink:hover{
-      color: white; 
-      background-color: #41acf4;
-     }
+
+  .menu .menulink:hover:not(.menu_active) {
+    background-color: #0248ca;
+    color: white; 
+}
+
+.menu_active {
+    background-color: #41acf4;
+}
 /*----------------user_nav css---------------------*/
+/*----------------user_nav friends css---------------------*/
+
+/*----------------user_nav friends css---------------------*/

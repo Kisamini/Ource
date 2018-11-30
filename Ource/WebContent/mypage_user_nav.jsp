@@ -23,7 +23,7 @@
         <div class="user_nav">
           <div class="menu">
             <ul>
-                <li><a id="my_info" class="menulink" href="">내 정보</a></li>
+                <li><a id="my_info" class="menu_active menulink" href="">내 정보</a></li>
                 <li><a id="my_contents" class="menulink" href="">게시글</a></li>
                 <li><a class="menulink" href="">친구 (${friends.rowCount})</a></li>
                 <li><a class="menulink" href="">menu</a></li>

@@ -14,4 +14,11 @@ $(function(){
         $('#contents').append($iframe2);
       });      
       //user_nav menu event end
+      $('.menulink').bind('click',function(evt){
+      evt.preventDefault();
+      console.log(evt.target);
+      $('.menulink').removeClass('menu_active');
+      $(evt.target).addClass('menu_active');
+    });
+      
 });
