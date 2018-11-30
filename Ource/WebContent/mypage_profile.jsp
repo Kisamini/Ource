@@ -39,11 +39,7 @@
 <p style="color:red;font-size:2em;">Error : ${error1}</p>
 </c:if>
 <c:forEach items="${profile.rows}" var="rs">
-
-    <script src="script/jquery.min.js"></script>
-    <script src="script/bootstrap.js"></script>
     <script src="script/user_profile.js"></script>
-  	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
   	<link rel="stylesheet" type="text/css" href="css/user_profile.css">
    <!--user profile-->
         <div id="header">

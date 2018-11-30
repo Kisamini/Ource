@@ -7,6 +7,31 @@
 	<c:set var="sessionId" value="${id }" scope="session" />
 	<script>location.href="mypage_main.jsp?id=${id}";</script>
 </c:if>
-<c:if test="${(id ne 'test1' )or(passwd ne 'test1')}">
-	<script>history.back();</script>
+<c:if test="${(id eq 'test2' )and(passwd eq 'test2')}">
+	<c:set var="sessionId" value="${id }" scope="session" />
+	<script>location.href="mypage_main.jsp?id=${id}";</script>
+</c:if>
+<c:if test="${(id eq 'test3' )and(passwd eq 'test3')}">
+	<c:set var="sessionId" value="${id }" scope="session" />
+	<script>location.href="mypage_main.jsp?id=${id}";</script>
+</c:if>
+<c:if test="${(id eq 'test4' )and(passwd eq 'test4')}">
+	<c:set var="sessionId" value="${id }" scope="session" />
+	<script>location.href="mypage_main.jsp?id=${id}";</script>
+</c:if>
+<c:if test="${(id eq 'test5' )and(passwd eq 'test5')}">
+	<c:set var="sessionId" value="${id }" scope="session" />
+	<script>location.href="mypage_main.jsp?id=${id}";</script>
+</c:if>
+<c:if test="${(id eq 'test6' )and(passwd eq 'test6')}">
+	<c:set var="sessionId" value="${id }" scope="session" />
+	<script>location.href="mypage_main.jsp?id=${id}";</script>
+</c:if>
+<c:if test="${(id eq 'test7' )and(passwd eq 'test7')}">
+	<c:set var="sessionId" value="${id }" scope="session" />
+	<script>location.href="mypage_main.jsp?id=${id}";</script>
+</c:if>
+<c:if test="${(id eq 'test8' )and(passwd eq 'test8')}">
+	<c:set var="sessionId" value="${id }" scope="session" />
+	<script>location.href="mypage_main.jsp?id=${id}";</script>
 </c:if>

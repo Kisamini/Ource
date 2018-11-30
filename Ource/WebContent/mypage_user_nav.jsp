@@ -10,7 +10,6 @@
 					user="ksm" 
 					password="ource"
 					var="conn"/>
-    <script src="script/jquery.min.js"></script>
     <script src="script/user_nav.js"></script>
     <link rel="stylesheet" type="text/css" href="css/user_nav.css">
 <c:catch var="error">

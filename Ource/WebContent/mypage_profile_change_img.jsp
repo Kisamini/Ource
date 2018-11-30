@@ -16,10 +16,8 @@
          </sql:query>
 </c:catch>
 <c:forEach items="${profile.rows}" var="rs">
-    <script src="script/jquery.min.js"></script>
     <script src="script/get_img.js"></script>
     <link rel="stylesheet" type="text/css" href="css/user_profile.css">
-  	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
  <div id="header">
           <div class="user_profile">
             <button class="replace">배경 이미지 변경</button>
