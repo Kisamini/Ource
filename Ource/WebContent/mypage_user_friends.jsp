@@ -26,6 +26,7 @@
 <!-- 친구의 친구가져오는 sql문 -->
 </c:if>
 <!-- 친구의 친구 -->
+
 <c:if test="${not(empty error)}">
 <p style="color:red;font-size:2em;">Error : ${error}</p>
 </c:if>

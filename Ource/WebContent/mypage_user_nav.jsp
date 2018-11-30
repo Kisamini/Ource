@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
-<c:set var="info" value="${param.id }" scope="session"/>
+<c:set var="getId" value="${param.id }" scope="session"/>
 <fmt:requestEncoding value="utf-8" />
 <sql:setDataSource driver="oracle.jdbc.driver.OracleDriver" 
 					url="jdbc:oracle:thin:@52.79.235.41:1521:xe" 
@@ -25,7 +25,7 @@
             <ul>
                 <li><a id="my_info" class="menu_active menulink" href="">내 정보</a></li>
                 <li><a id="my_contents" class="menulink" href="">게시글</a></li>
-                <li><a class="menulink" href="">친구 (${friends.rowCount})</a></li>
+                <li><a id="my_friends" class="menulink" href="">친구 (${friends.rowCount})</a></li>
                 <li><a class="menulink" href="">menu</a></li>
             </ul>
           </div>
