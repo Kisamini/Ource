@@ -10,5 +10,6 @@
 	
     <typeAliases>
     	<typeAlias type="com.spring.sns.myInfo.service.UserVO" alias="userVO"/>
+    	<typeAlias type="com.spring.sns.cmmn.CamelMap" alias="camelMap"/>
     </typeAliases>
 </configuration>

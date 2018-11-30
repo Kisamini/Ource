@@ -1,9 +1,14 @@
 package com.spring.sns.myInfo.service;
 
+import java.util.List;
+import java.util.Map;
+
 public class UserVO {
 	private int userNumber, userBirth;
 	private String userId, userPw, userName, userGender;
 
+	private List<Map<String, Object>> userInfoDetail;
+	
 	public UserVO() {}
 	
 	public UserVO(int userNumber, int userBirth, String userId, String userPw, String userName, String userGender) {
@@ -63,4 +68,13 @@ public class UserVO {
 	public void setUserGender(String userGender) {
 		this.userGender = userGender;
 	}
+
+	public List<Map<String, Object>> getUserInfoDetail() {
+		return userInfoDetail;
+	}
+
+	public void setUserInfoDetail(List<Map<String, Object>> userInfoDetail) {
+		this.userInfoDetail = userInfoDetail;
+	}
+	
 }
