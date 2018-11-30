@@ -1,6 +1,8 @@
 
 /*----------------user_nav css---------------------*/
 .user_nav{
+  position:absolute;
+  top:400px;
   background-color: #fff;
   width: 70%;
   height:500px;

@@ -1,8 +1,11 @@
     /*----------------top_nav css---------------------*/
 .top_nav{
+  z-index:90;
+  position:fixed;
   width: 100%;
   height: 100px;
   border-bottom:3px #2866d8 solid;
+  background-color:#FFF;
 }
 .top_nav *{display: inline-block;}
 .top_nav img{
@@ -58,7 +61,7 @@
     left: 60%;
     top: 25px;
   }
-  .top_goto_mypage a:link,a:hover,a:visited{
+  .top_goto_mypage a:link,.top_goto_mypage a:hover,.top_goto_mypage a:visited{
     text-decoration: none;
     color:#2866d8;
     font-size: 20px;

@@ -1,5 +1,7 @@
 /*----------------user_profile css---------------------*/
   #header{
+    position: absolute;
+    top:100px;
     width: 100%;
     background-color: #FFF;
     background-repeat: no-repeat;
@@ -126,6 +128,17 @@
 /* ---------------modal css-------------------- */
 .following_li,.follower_li{
   list-style: none;
+}
+.following_li>a:visited,.following_li>a:link,.following_li a:hover,
+.follower_li>a:visited,.follower_li>a:link,.follower_li a:hover{
+  text-decoration: none;
+    color:#2866d8;
+    font-size: 20px;
+    font-weight: bolder;
+}
+.follower_li>a:hover,.following_li>a:hover{
+  color:#4286f4;
+  font-size:25px;
 }
 .user_following_img,.user_follower_img{
    width: 50px; 

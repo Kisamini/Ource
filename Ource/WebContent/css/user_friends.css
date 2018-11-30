@@ -1,6 +1,9 @@
 /*----------------user_friends css---------------------*/
 .user_friends{display: inline-block;}
 .user_friends{
+  position:absolute;
+  top:400px;
+  left: 70%;
   background-color: #FFF;
   width: 30%;
   height:500px;

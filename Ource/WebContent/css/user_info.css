@@ -33,18 +33,6 @@
 .user_info>div{
   margin-top: 10px;
 }
-.user_info_update_btn{
-  float: right;
-}
-#user_info_update{
-  width: 180px;
-  height: 25px;
-  border-radius: 5px;
-  font-weight: bolder;
-  border-color: transparent;
-  background: #2866d8;
-  color: #fff;
-}
 .user_info_more_btn{
   margin-top: 30px;
 }

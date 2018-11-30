@@ -28,11 +28,4 @@
     <div class="user_info_more_btn">
     <a href=""><img src="images/more1.png" title="더보기" draggable="false"/></a>
     </div>
-     <div class="user_info_update_btn">
-     <c:if test="${sessionScope.sessionId eq sessionScope.info }">
-      <input type="button" id="user_info_update" value="수정하기" />
-      </c:if>
-       <c:if test="${sessionScope.sessionId ne sessionScope.info}">
-      </c:if>
-    </div>
   </div>
