@@ -111,13 +111,13 @@
       <div class="modal-body">
       <ul class="follow_list">
       	<c:forEach items="${follower.rows}" var="show_follower_users">
-      		<c:if test="${show_follower_users.profile_img eq 0}">
+      		<c:if test="${show_follower_users.profile_img eq '0'}">
 		      <li class="follower_li"><a href="mypage_main.jsp?id=${show_follower_users.mem_id}">
 		      <img class="user_follower_img" draggable="false" src="images/default_user_profile_img.png" alt="친구 이미지">
 		      ${show_follower_users.username}</a>
 		      </li>
 		 	</c:if>
-		 	<c:if test="${show_follower_users.profile_img ne 0}">
+		 	<c:if test="${show_follower_users.profile_img ne '0'}">
 		      <li class="follower_li"><a href="mypage_main.jsp?id=${show_follower_users.mem_id}">
 		      <img class="user_follower_img" draggable="false" src="<c:url value='upload/${show_follower_users.mem_id}/${show_follower_users.profile_img}'/>" alt="친구 이미지">
 		      ${show_follower_users.username}</a>
@@ -126,13 +126,13 @@
 	     </c:forEach>
 	     <c:forEach items="${following.rows}" var="show_following_users">
 			<!-- 버튼 클릭시 팔로잉 하고있는 사람의 정보를 modal로 보여줌 -->
-			<c:if test="${show_following_users.profile_img eq 0}">
+			<c:if test="${show_following_users.profile_img eq '0'}">
 				<li class="following_li"><a href="mypage_main.jsp?id=${show_following_users.target_mem_id}">
 			      <img class="user_following_img" draggable="false" src="images/default_user_profile_img.png" alt="친구 이미지">
 			      ${show_following_users.username}</a>
 			      </li>
 			</c:if>
-			<c:if test="${show_following_users.profile_img ne 0}">
+			<c:if test="${show_following_users.profile_img ne '0'}">
 				<li class="following_li"><a href="mypage_main.jsp?id=${show_following_users.target_mem_id}">
 		      	<img class="user_following_img" draggable="false" src="<c:url value='upload/${show_following_users.target_mem_id}/${show_following_users.profile_img}'/>" alt="친구 이미지">
 		      	${show_following_users.username}</a>
