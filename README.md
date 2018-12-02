@@ -2,7 +2,7 @@
 
 ## 페이지 구성
 >### Mypage 첫 페이지
-#### 1. mypage_main.jsp -> mypage 첫 화면, page import로 구성
+#### mypage_main.jsp -> mypage 첫 화면, page import로 구성
 #### page import
   * **mypage_top.jsp** -> 상단바
   * **mypage_profile.jsp** -> 프로필 이미지 
@@ -16,7 +16,7 @@
     * **mypage_contents.jsp** -> 내 게시글 출력
 - - -
 >### Mypage 이미지 수정 페이지
-#### 2. mypage_profile_update.jsp  -> 이미지 수정 페이지, page import로 구성
+#### mypage_profile_update.jsp  -> 이미지 수정 페이지, page import로 구성
 #### page import
   * **mypage_top.jsp** -> 상단바
   * **mypage_profile_update.jsp** -> 프로필 이미지 
