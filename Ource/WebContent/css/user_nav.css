@@ -3,9 +3,10 @@
 .user_nav{
   position:absolute;
   top:400px;
+  right: 25%;
   background-color: #fff;
-  width: 70%;
-  float: left
+  width: 900px;
+  float: left;
 }
 .user_nav ul{
   list-style-type: none;
@@ -47,7 +48,8 @@
 .menu_active {
     background-color: #41acf4;
 }
+@media screen and (max-width: 1200px) {
+  .user_nav{
+    left: 0px;
+  }
 /*----------------user_nav css---------------------*/
-/*----------------user_nav friends css---------------------*/
-
-/*----------------user_nav friends css---------------------*/

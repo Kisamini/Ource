@@ -2,16 +2,18 @@
 .user_friends{display: inline-block;}
 .user_friends{
   position:absolute;
-  top:400px;
-  left: 70%;
+  top:100px;
+  right: 0;
   background-color: #FFF;
-  width: 30%;
-  height:500px;
+  width: 200px;
+  height:100%;
   font-size: 20px;
    overflow-y: auto;
 }
-.user_friends_border{
-  border:5px solid #2866d8 ;
+.user_friends{
+  border-left:3px solid #2866d8 ;
+  border-bottom:3px solid #2866d8 ;
+  border-right:3px solid #2866d8 ;
 }
 .user_friends li {
   list-style: none;
@@ -37,4 +39,8 @@
    border-radius: 50%;
    margin:5px;
 }
+ @media screen and (max-width: 1120px) {
+  .user_friends{
+    display:none;
+  }
 /*----------------user_friends css---------------------*/
