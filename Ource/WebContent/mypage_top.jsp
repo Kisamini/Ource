@@ -24,7 +24,7 @@
  <!--top menu-->
         <div class="top_nav">
             <div class="go_home">
-              &nbsp;&nbsp;&nbsp;&nbsp;<a href="index.html"><img title="Goto Home" src="images/logo_background_transparent.png" alt="홈으로.." draggable="false"></a>
+              &nbsp;&nbsp;&nbsp;&nbsp;<a href="index.html"><img title="Goto Home" src="images/ource_logo3.png" alt="홈으로.." draggable="false"></a>
             </div> 
               <div class="top_search">
                 <span class="icon"><i class="fa fa-search"></i></span>
