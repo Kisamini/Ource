@@ -11,7 +11,7 @@
     * **follow_ok.jsp** -> 팔로우 처리
     * **unfollow_ok.jsp** -> 팔로우 해제 처리
   * **mypage_user_friends.jsp** -> 친구 목록
-  * **mypage_user_nav.jsp** -> 정보, 게시글, 친구목록 네비게이션 iframe으로 하위 구성
+  * **mypage_user_nav.jsp** -> 정보, 게시글, 친구목록 네비게이션 **iframe**으로 하위 구성
     * **mypage_user_info.jsp** -> 내 정보 출력
     * **mypage_contents.jsp** -> 내 게시글 출력
 - - -
@@ -59,4 +59,4 @@
 #### git에 올라가 있는 목록
   * **login.jsp** -> 임시 로그인 페이지
   * **login_ok.jsp** -> session과 parameter를 구성하기 위한 파일
-  * **mypage_main.html** -> mypage 구성시에 만든 최초의 틀
+  * **logout.jsp** -> 임시 로그아웃 페이지
