@@ -17,4 +17,10 @@ public interface MyInfoMapper {
 
 	List<Map<String, Object>> selectUserDetailList(int userNumber) throws Exception;
 
+	int insertMyinfoDetail(Map<String, Object> paramMap) throws Exception;
+
+	int deleteMyinfoDetail(Map<String, Object> paramMap) throws Exception;
+
+	int updateMyinfoDetail(Map<String, Object> paramMap) throws Exception;
+
 }

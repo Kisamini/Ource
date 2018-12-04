@@ -26,7 +26,10 @@
 .myinfoTypeName {margin-left: 20px;color: #3578e5;}
 .myinfoTypeName span {margin-left:5px;}
 
-.userinfoDetail {margin-bottom:10px;clear:both;overflow:  hidden;height:  24px;line-height:  24px;}
+.userinfoDetail, .userinfoDetailUpdate {margin-bottom:10px;clear:both;overflow:  hidden;height:  24px;line-height:  24px;}
+.userinfoDetailUpdate {height:30px;line-height:30px;}
+.userinfoDetailUpdate input {height:28px;width:300px;}
+.userinfoDetailUpdate button {height: 30px;line-height: 30px;}
 .userinfoDetail p {font-size:15px;color: #365899;font-weight:bold;float: left;}
 .detailBtnCon {float:right;}
 .detailBtnCon button {cursor: pointer;border:none;color:#fff;font-size:  12px;/* padding: 4px 7px; */border-radius:  2px;float:  left;margin-left: 4px;background:#c5c5c5;}

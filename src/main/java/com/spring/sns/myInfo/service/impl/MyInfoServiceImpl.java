@@ -31,4 +31,19 @@ public class MyInfoServiceImpl implements MyInfoService {
 	public List<Map<String, Object>> selectUserDetailList(int userNumber) throws Exception {
 		return myInfoMapper.selectUserDetailList(userNumber);
 	}
+
+	@Override
+	public int insertMyinfoDetail(Map<String, Object> paramMap) throws Exception {
+		return myInfoMapper.insertMyinfoDetail(paramMap);
+	}
+
+	@Override
+	public int deleteMyinfoDetail(Map<String, Object> paramMap) throws Exception {
+		return myInfoMapper.deleteMyinfoDetail(paramMap);
+	}
+
+	@Override
+	public int updateMyinfoDetail(Map<String, Object> paramMap) throws Exception {
+		return myInfoMapper.updateMyinfoDetail(paramMap);
+	}
 }

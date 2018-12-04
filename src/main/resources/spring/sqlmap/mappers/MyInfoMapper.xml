@@ -17,11 +17,14 @@
 		SELECT  UINFO_NAME,
 		        UINFO_TYPE,
 		        USER_NUMBER,
-		        TYPE_NAME
+		        TYPE_NAME,
+		        UINFO_NUM
 		  FROM  USER_INFO ui
 		  JOIN  USER_INFO_TYPE uit
 		    ON  ui.UINFO_TYPE = uit.TYPE_NUM
-		 WHERE  USER_NUMBER = #{_parameter}		
+		 WHERE  USER_NUMBER = #{_parameter} 
+		   AND  USE_YN = 'Y'
+		 ORDER  BY UINFO_NUM DESC		
 	</select>
 	
 	<select id="selectMyInfoTypeList" resultType="camelMap">
@@ -29,4 +32,38 @@
 				TYPE_NAME
 		  FROM	USER_INFO_TYPE
 	</select>	
+	
+	<insert id="insertMyinfoDetail" parameterType="map">
+		<selectKey order="BEFORE" resultType="int" keyProperty="uinfoNumber">
+			SELECT USER_INFO_SEQ.NEXTVAL FROM DUAL
+		</selectKey>
+	
+		INSERT INTO USER_INFO
+		(
+			UINFO_NUM,
+			UINFO_NAME,
+			UINFO_TYPE,
+			USER_NUMBER
+		)
+		VALUES
+		(
+			#{uinfoNumber},
+			#{uinfoName},
+			#{uinfoType},
+			#{userNumber}
+		)
+		
+	</insert>
+	
+	<delete id="deleteMyinfoDetail" parameterType="map">
+		UPDATE USER_INFO SET
+		USE_YN = 'N'
+		WHERE UINFO_NUM = #{uinfoNum}
+	</delete>
+	
+	<update id="updateMyinfoDetail" parameterType="map">
+		UPDATE USER_INFO SET
+		UINFO_NAME = #{uinfoName}
+		WHERE UINFO_NUM = #{uinfoNum}
+	</update>
 </mapper>

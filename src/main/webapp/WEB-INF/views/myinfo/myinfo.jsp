@@ -19,7 +19,7 @@
 			<li><a href="#" id="myinfoUpdate" class="pageMove">프로필 수정</a></li>
 		</ul>
 		<article>
-			<div class="myinfo profile">
+			<div class="myinfo profile" data-user-number="<c:out value="${myinfo.userNumber}"/>">
 				<span class="columnName"><img src="images/default_profile.jpg"></span>
 				<span class="profileValue"><c:out value="${myinfo.userId}"/></span>
 			</div>
@@ -54,11 +54,11 @@
 							
 				<c:forEach items="${myinfo.userInfoDetail}" var="userDetail">
 					<c:if test="${userDetail.uinfoType eq infoType.typeNum}">
-						<div class="userinfoDetail">
-							<p><c:out value="${count}. ${userDetail.uinfoName}"/></p>
+						<div class="userinfoDetail" data-uinfo-num="<c:out value='${userDetail.uinfoNum}'/>">
+							<p><c:out value="${userDetail.uinfoName}"/></p>
 							<div class="detailBtnCon">
-								<button id="detailUploadBtn">수정</button>
-								<button id="detailDeleteBtn">삭제</button>
+								<button class="detailUploadBtn">수정</button>
+								<button class="detailDeleteBtn">삭제</button>
 							</div>
 						</div>
 						
