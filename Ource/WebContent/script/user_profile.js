@@ -1,8 +1,8 @@
 $(function(){
   var followingLi = $('.following_li').remove();
   var followerLi = $('.follower_li').remove();
+  var paramID = $('#paramID').val();
   $("#showModalTitle").css("text-align","center");
-
         // 프로필 수정
       $("#user_profile_update").bind('click',function(){
         $("#goto_img_change").submit();
@@ -10,15 +10,34 @@ $(function(){
       // 프로필 수정 끝
       //follow 할때
       $("#user_do_follow").bind('click',function(){
-        location.herf="follow_ok.jsp";
+         $.ajax({   
+            type : "POST",
+            url : "follow_ok.jsp?id="+paramID,
+            dataType : "text",
+            error : function(err){
+                console.log(err);
+            },
+            success : function(data){
+                location.reload();
+            }  
+        });
       });
       //follow 할때 끝
       //unfollow 할때
       $("#user_donot_follow").bind('click',function(){
-        location.herf="unfollow_ok.jsp";
+         $.ajax({             
+            type : "POST",
+            url : "unfollow_ok.jsp?id="+paramID,
+            dataType : "text",
+            error : function(err){
+                console.log(err);
+            },
+            success : function(data){
+                location.reload();
+            }         
+        });
       });
       //unfollow 할때 끝
-      
 
       $("#follower_btn").bind('click',function(){
         $(".follow_list").html(followerLi);

@@ -26,6 +26,7 @@
             <sql:param>${param.id }</sql:param>
          </sql:query>
 <!-- follower sql -->
+
 <!-- following sql -->
 	 <sql:query dataSource = "${conn}" var = "following">
         	select b.target_mem_id, a.username, c.profile_img
@@ -38,6 +39,11 @@
 <c:if test="${not(empty error1)}">
 <p style="color:red;font-size:2em;">Error : ${error1}</p>
 </c:if>
+<c:forEach items="${follower.rows }" var="isFollower">
+<c:if test="${isFollower.mem_id eq sessionScope.sessionId}">
+	<c:set var="yesfollower" value="${isFollower.mem_id}" scope="session" />
+</c:if>
+</c:forEach>
 <c:forEach items="${profile.rows}" var="rs">
     <script src="script/user_profile.js"></script>
   	<link rel="stylesheet" type="text/css" href="css/user_profile.css">
@@ -58,24 +64,18 @@
               <c:if test="${param.id eq sessionScope.sessionId }">
   				<button title="프로필 이미지 수정" id="user_profile_update" name="user_profile_update" class="replace">프로필 사진 변경</button>
 				</c:if>
-				 <button id="follower_btn" class="follower" data-toggle="modal" data-target="#showModal">팔로워  ${follower.rowCount}</button>
-				 <button id="following_btn" class="following" data-toggle="modal" data-target="#showModal" >팔로잉  ${following.rowCount}</button>
+				 <button id="follower_btn" class="follower" data-toggle="modal" data-target="#showModal" title="팔로워 명수">팔로워  ${follower.rowCount}</button>
+				 <button id="following_btn" class="following" data-toggle="modal" data-target="#showModal" title="팔로잉 명수">팔로잉  ${following.rowCount}</button>
 			<!-- 정보 수정은 자신만 할수있음으로 세션아이디와 파라미터 아이디가 다르면 없음 --> 
             <c:if test="${param.id ne sessionScope.sessionId }">
-            
             	<!-- 팔로우 전 -->
-	           		<c:if test="${follower.rowCount eq 0}">
-			            <form action="follow_ok.jsp" method="post">
-				            <input type="hidden" name="id" value="${param.id }"/>
-				  			<input type="submit" value="팔로우 하기" id="user_do_follow" class="follow" title="팔로우 하기" />
-			  			</form>
+	           		<c:if test="${sessionScope.yesfollower ne sessionScope.sessionId}">
+			  			<input type="button" value="팔로우 하기" id="user_do_follow" class="follow" title="팔로우 하기">
 		  			</c:if>
-            <!-- 팔로우 후 -->
-	            	<c:if test="${follower.rowCount ne 0}">
-		            	<form action="unfollow_ok.jsp" method="post">
-				            <input type="hidden" name="id" value="${param.id }"/>
-				  			<input type="submit" value="팔로우 취소" id="user_donot_follow" class="unfollow" title="언 팔로우 하기" />
-			  			</form>
+            	<!-- 팔로우 후 -->
+	            	<c:if test="${sessionScope.yesfollower eq sessionScope.sessionId}">
+				  			<input type="button" value="팔로우 취소" id="user_donot_follow" class="unfollow" title="언 팔로우 하기" />
+				  			<c:set var="yesfollower" value="" scope="session" />
 	            	</c:if>
 			</c:if>
         	</div>
@@ -92,7 +92,7 @@
     </c:if>
         <!--user profile end-->
   </c:forEach>
-        <form id="goto_img_change" action="mypage_profile_update.jsp"><input type="hidden" name="id" value="${param.id}"/></form>
+        <form id="goto_img_change" action="mypage_profile_update.jsp"><input type="hidden" name="id" id="paramID" value="${param.id}"/></form>
         
 
 

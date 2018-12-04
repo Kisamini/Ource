@@ -19,6 +19,3 @@
 <c:if test="${not(empty error)}">
 	<script>alert('앙대여');history.back();</script>
 </c:if>
-<script>
-location.href="mypage_main.jsp?id=${param.id}";
-</script>
