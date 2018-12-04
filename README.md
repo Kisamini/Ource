@@ -46,6 +46,7 @@
   * **user_info.js** -> **mypage_user_info.jsp**에서 더보기를 눌렀을때 이동하는 script
   * **user_nav.js** -> **user_nav.jsp** 클릭시 색상변경, 내정보, 게시글, 친구목록을 보여주는 script
   * **user_profile.js** -> **user_profile.jsp**에서  modal 사용, 프로필 이미지 수정, **follow** & **unfollow** script
+  * **user_top.js** -> **user_top.jsp**에서 a tag 링크 제거
   
 - - -
 >### Image
