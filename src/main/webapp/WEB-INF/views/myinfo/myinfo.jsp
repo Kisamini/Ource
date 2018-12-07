@@ -10,63 +10,58 @@
 <link rel="stylesheet" href="css/myinfo/myinfo.css">
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <title>내정보</title>
 </head>
 <body>
-	<div id="contents">
-		<ul class="profile_menu">
-			<li><a href="#" class="pageMove nonPageMove">프로필 보기</a></li>
-			<li><a href="#" id="myinfoUpdate" class="pageMove">프로필 수정</a></li>
-		</ul>
-		<article>
-			<div class="myinfo profile" data-user-number="<c:out value="${myinfo.userNumber}"/>">
-				<span class="columnName"><img src="images/default_profile.jpg"></span>
-				<span class="profileValue"><c:out value="${myinfo.userId}"/></span>
-			</div>
-			<div class="myinfo">
-				<span class="columnName">이름</span>
-				<span class="profileValue"><c:out value="${myinfo.userName}"/></span>
-			</div>
-			<div class="myinfo">
-				<span class="columnName">성별</span>
-				<span class="profileValue">
-					<c:if test="${myinfo.userGender eq 'M'}">남성</c:if>
-					<c:if test="${myinfo.userGender eq 'F'}">여성</c:if>
-				</span>	
-			</div>
-			<div class="myinfo">
-				<span class="columnName">생년월일</span>
-				<span class="profileValue"><c:out value="${myinfo.userBirth}"/></span>
-			</div>
-			
-			<div class="myinfoLine"></div>
-			
-			<c:forEach items="${userInfoTypeList}" var="infoType">
-				<div class="myinfoDetailTemplate">
-					<p><c:out value="${infoType.typeName}"/></p>
-					<div class="myinfoCon" data-type-num="<c:out value='${infoType.typeNum}'/>" data-type-name="<c:out value='${infoType.typeName}'/>">
-						<div class="myinfoDetailClick"><i class="fas fa-plus"></i></div>
-						<div class="myinfoTypeName"><c:out value="${infoType.typeName}"/><span>추가</span></div>
-					</div>
+	<div id="myinfo_container">
+		<div id="contents">
+			<ul class="profile_menu">
+				<li><a href="#" class="pageMove nonPageMove">프로필 보기</a></li>
+				<li><a href="#" id="myinfoUpdate" class="pageMove">프로필 수정</a></li>
+			</ul>
+			<article>
+				<div class="myinfo profile" data-user-number="<c:out value="${myinfo.userNumber}"/>">
+					<span class="columnName"><img src="images/default_profile.jpg"></span>
+					<span class="profileValue"><c:out value="${myinfo.userId}"/></span>
+				</div>
+				<div class="myinfo">
+					<span class="columnName">이름</span>
+					<span class="profileValue"><c:out value="${myinfo.userName}"/></span>
+				</div>
+				<div class="myinfo">
+					<span class="columnName">성별</span>
+					<span class="profileValue">
+						<c:if test="${myinfo.userGender eq 'M'}">남성</c:if>
+						<c:if test="${myinfo.userGender eq 'F'}">여성</c:if>
+					</span>	
+				</div>
+				<div class="myinfo">
+					<span class="columnName">생년월일</span>
+					<span class="profileValue"><c:out value="${myinfo.userBirth}"/></span>
 				</div>
 				
-				<c:set var="count" value="1"/>
-							
-				<c:forEach items="${myinfo.userInfoDetail}" var="userDetail">
-					<c:if test="${userDetail.uinfoType eq infoType.typeNum}">
-						<div class="userinfoDetail" data-uinfo-num="<c:out value='${userDetail.uinfoNum}'/>">
-							<p><c:out value="${userDetail.uinfoName}"/></p>
-							<div class="detailBtnCon">
-								<button class="detailUploadBtn">수정</button>
-								<button class="detailDeleteBtn">삭제</button>
+				<div class="myinfoLine"></div>
+				
+				<c:forEach items="${userInfoTypeList}" var="infoType">
+					<div class="myinfoDetailTemplate">
+						<p><c:out value="${infoType.typeName}"/></p>
+					</div>
+					
+					<c:set var="count" value="1"/>
+								
+					<c:forEach items="${myinfo.userInfoDetail}" var="userDetail">
+						<c:if test="${userDetail.uinfoType eq infoType.typeNum}">
+							<div class="userinfoDetail" data-uinfo-num="<c:out value='${userDetail.uinfoNum}'/>">
+								<p><c:out value="${userDetail.uinfoName}"/></p>
 							</div>
-						</div>
-						
-						<c:set var="count">${count + 1}</c:set>
-					</c:if>
+							
+							<c:set var="count">${count + 1}</c:set>
+						</c:if>
+					</c:forEach>
 				</c:forEach>
-			</c:forEach>
-		</article>
+			</article>
+		</div>
 	</div>
 	
 	<div class="modal fade" id="showModal" tabindex="-1" role="dialog" aria-labelledby="showModalTitle" aria-hidden="true">

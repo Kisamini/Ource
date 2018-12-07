@@ -1,6 +1,7 @@
 @CHARSET "UTF-8";
-#contents {max-width: 935px;margin: 100px auto;display:flex;border:1px solid #cecece;}
-#contents .profile_menu {border-right:1px solid #cecece;;}
+#myinfo_container {max-width: 935px;margin: 100px auto;padding:0 50px;}
+#contents {display:flex;border:1px solid #cecece;width:  100%;}
+#contents .profile_menu {border-right:1px solid #cecece;}
 #contents .profile_menu a {width:230px;padding: 16px 36px;display:block;text-decoration:none;color: #555;box-sizing:  border-box;margin-left:  2px;position:  relative;}
 #contents .profile_menu a:hover {background: #f3f3f3;}
 #contents .profile_menu a::before {content:'';position:  absolute;left: -2px;width:  2px;height: 100%;top: 0;}
@@ -11,7 +12,7 @@
 #contents>article {width:100%;padding: 50px 20px;}
 #contents .myinfo {height:50px;line-height:50px;}
 #contents .myinfo img {width:35px;border:1px solid #cecece;border-radius:100%;margin-top: 7px;}
-#contents .myinfo .columnName, #detailUploadBox .detailUploadContents span:first-child {width: 230px;text-align:right;display:  inline-block;font-weight:  bold;padding-right: 50px;height:  50px;}
+#contents .myinfo .columnName, #detailUploadBox .detailUploadContents span:first-child {max-width: 230px;text-align:right;display:  inline-block;font-weight:  bold;padding-right: 50px;height:  50px;width: 50%;}
 #contents .myinfo .profileValue {display:inline-block;}
 #contents .myinfo.profile>span {float: left;}
 
@@ -44,3 +45,16 @@
 #detailUploadBox .detailUploadBtnCon button#detailSubmitBtn.active {background:#4977cd;color:#fff;}
 
 .modal-header .close {position:absolute;top: 15px;right: 20px;}
+
+@media screen and (max-width:600px) {
+    /*.profile_menu {display:none;}*/
+    #contents {display:block;}
+    #contents .profile_menu li {width:50%;float:left;}
+    #contents .profile_menu a.nonPageMove {background:#787878;color:#fff;}
+    #contents .profile_menu a {width:  100%;}
+    #contents .profile_menu {overflow:hidden;border-bottom: 1px solid #e3e2e2;border-right:  none;}
+}
+
+@media screen and (max-width:453px) {
+    #myinfo_container {padding:0 20px;}
+}
