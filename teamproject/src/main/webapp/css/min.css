@@ -1,0 +1,54 @@
+/*濡쒓렇�씤 �럹�씠吏�  */
+#btnSearch,
+#btnLogin
+{background-color:#CBB7D0; border:0; color:black; margin-top:40px}
+
+#btnSearch{width:200px}
+
+#btnLogin{width:150px}
+
+#banner_bg{text-align:center; margin-top:250px}
+
+.a{width:500px; heigh:1000px}
+
+#td_label{width:160px;height:50px;background-color:#F9F4FB}
+
+#bg_table{background-color:#F9F4FB}
+
+.login_table{margin-left:auto; margin-right:auto; margin-top:20px;}
+
+#search{magin:30px 30px; padding: 30px; color:white}
+
+a:link {text-decoration:underline; color:white} 
+
+.link{text-align:center; margin-bottom:50px}
+
+#div_bottom{background-color:#F9F7FA; height:200px}
+
+
+
+/*�븘�씠�뵒/鍮꾨�踰덊샇 李얘린*/
+.logo_div{text-align:center}
+
+#btnId{background-color:#CBE7A0; border:0; color:black; width:200px; height:50px; border-radius: 12px; font-size:2em}
+
+#IdLabel, #PwLabel{font-size:1.5em; color:#686B65; margin-top:30px;}
+
+#btnGoToLogin, #btnGoToLogin1{background-color:#FBCC4B; margin-top:30px; width:180px; border:0}
+
+#btnIdSearch, #btnIdCheck{margin-top:30px; width:180px; background-color:#EF999B; border:0}
+
+.container{width:700px}
+
+#myTabContent{width:450px;}
+
+#myTab{width:500px}
+
+#home{text-align:left}
+
+#profile{text-align:left}
+
+#idCheckokText{color:blue; font-size:0.7em; margin-top:5px; font-weight:bold; visibility: hidden;}
+
+
+
