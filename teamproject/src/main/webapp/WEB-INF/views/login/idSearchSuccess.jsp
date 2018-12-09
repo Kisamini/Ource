@@ -28,7 +28,7 @@
 	$("#aa").text("회원님의 아이디는  ${memberVO.userid} 입니다.");
 	$("#myModal").modal("show");
 	$("#btnClose").click(function(){
-		location.href = "idSearch.do";    
+		location.href = "idSearch2.do";    
 	});
 	</script>
 </c:if>
@@ -38,7 +38,7 @@
 	    $("#aa").text("입력하신 이름 또는 생년월일이 일치하지 않습니다.\n확인 후 다시 입력해 주세요.");
 	    $("#myModal").modal("show");
 	    $("#btnClose").click(function(){
-			location.href = "idSearch.do";
+			location.href = "idSearch2.do";
 		});
 		
 	</script>

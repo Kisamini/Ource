@@ -18,11 +18,7 @@
 	#aaa{margin-left: 290px; }
 	
 	.a{text-align:center}
-	
-	/* @media all and (max-width:1200px){
-	 	   #aaa{margin-left:100px;}
-	 	   .form-group{margin-left:100px}
-	 	} */
+
 	</style>
 	
 	<title>[Ource]우리들의 목소리</title>
@@ -33,7 +29,7 @@
 		});
 		
 	    $("#btnSearch").bind("click", function(){
-			$(".loginform").attr("action", "idSearch.do");
+			$(".loginform").attr("action", "idSearch2.do");
 		});  
 	});
 	

@@ -14,7 +14,8 @@
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="js/bootstrap.js"></script>
 	<style>
-	
+	  body{background-image: url("./image/bg4.png")}
+	  .container{background-image: url("./image/bg5.png")}
 	</style>
 <title>[ource]아이디/비밀번호 찾기</title>
 <script>
@@ -26,40 +27,29 @@ $("#btnIdSearch").bind("click", function(){
 $("#btnGoToLogin").bind("click", function(){
 	$(".idsearchform").attr("action", "login.do");
 });
-
-$("#btnGoToLogin1").bind("click", function(){
-	$(".idsearchform").attr("action", "login.do");
-});
-});
-</script>
-
-<%-- <c:if test="${!empty memberVO.userid}"> --%>
-<script>
-$(function(){
-	$("#btnIdCheck").bind("click", function(){
-		
-			 $(".idCheckok").style.visibility = 'none';
-		 
-	})
+$("#btnIdCheck").bind("click", function(){
+	$(".idsearchform").attr("action", "idCheckOk.do");
+})
 
 });
 </script>
-<%-- </c:if> --%>
+
 
 </head>
 <body>
-	 <div class="logo_div"><img src="./image/logo_small.png"/></div>
+	 <div class="logo_div"><img src="./image/ource_logo3_resized.png"/></div>
 	  
 	  <div class="container" align="center">
 	  <form method="post" class="idsearchform">
-   <h2>아이디/비밀번호 찾기</h2>
-   
+   <div align="right">
+   <button type="submit" class="btn btn-success" id="btnGoToLogin">로그인화면으로 이동</button>
+   </div>
+  
+     <!--아이디 찾기  -->
    <ul id="myTab" class="nav nav-tabs" role="tablist">
      <li role="presentation" class="active"><a data-target="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">아이디 찾기</a></li>
-     <li role="presentation" class=""><a data-target="#profile" role="tab" id="profile-tab" data-toggle="tab" aria-controls="profile" aria-expanded="false">비밀번호 찾기</a></li>
    </ul>
    
-   <!--아이디 찾기  -->
    <div id="myTabContent" class="tab-content">
      <div role="tabpanel" class="tab-pane fade active in" id="home" aria-labelledby="home-tab">
         <label for="exampleInputEmail1" id="IdLabel">이름</label>
@@ -67,31 +57,36 @@ $(function(){
         <label for="exampleInputEmail1" id="IdLabel">생년월일</label>
         <input type="text" class="form-control" id="InputBirth" name="birth" placeholder="생년월일을 입력하세요(ex: 19880105)"/>
         <div id=searchId align="right">
-         <button type="submit" class="btn btn-success" id="btnGoToLogin">로그인화면으로 이동</button>
          <button type="submit" class="btn btn-success" id="btnIdSearch">아이디 찾기</button>
         </div>
      </div>
      
      
-     <!--비밀번호 찾기  -->
-     <div role="tabpanel" class="tab-pane fade" id="profile" aria-labelledby="profile-tab">
+        <!--비밀번호 찾기  -->
+     <ul id="myTab1" class="nav nav-tabs" role="tablist">
+     <li role="presentation" class="active"><a data-target="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">비밀번호 찾기</a></li>
+    </ul>
+  
+      <div id="myTabContent1" class="tab-content">
+     <div role="tabpanel" class="tab-pane fade active in" id="home" aria-labelledby="home-tab">
        <label for="exampleInputEmail1" id="PwLabel">아이디</label>
-        <input type="text" class="form-control" id="InputId" placeholder="아이디를 입력하세요"/>
+        <input type="text" class="form-control" name="userid" id="InputId" placeholder="아이디를 입력하세요"/>
         <div id=searchId align="right">
          <button type="submit" class="btn btn-success" id="btnIdCheck">아이디 확인</button>
         </div>
         <div class="idCheckok">
          <div id="idCheckTest" align="left"> 아이디 확인에 성공하였습니다.</div>
-         <div>
-        <label for="exampleInputEmail1" id="PwLabel">다음 질문에 답하세요.</label>
-         <input type="text" class="form-control" id="exampleInputEmail1"/>
-        <label for="exampleInputEmail1" id="PwLabel">답</label>
-         <input type="text" class="form-control" id="exampleInputEmail1"/>
+         <div id="quest">
+        <label for="exampleInputEmail1" id="PwLabel">다음 힌트에 대한 답을 적으세요.</label>
+         <input type="text" class="form-control" id="quest" name="quest"/>
+        <label for="exampleInputEmail1" id="PwLabel">답 :</label>
+         <input type="text" class="form-control" id="answer" name="answer"/>
          </div>
-        <div align="right">
-         <button type="submit" class="btn btn-success" id="btnGoToLogin1">로그인화면으로 이동</button>
         </div>
+        <div id=searchPW align="right">
+         <button type="submit" class="btn btn-success" id="btnSearchPW">비밀번호 찾기</button>
         </div>
+     </div>
      </div>
      
    </div>

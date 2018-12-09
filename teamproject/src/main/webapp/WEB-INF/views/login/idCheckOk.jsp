@@ -29,7 +29,18 @@
 	$("#aa").text("아이디확인에 성공하였습니다.");
 	$("#myModal").modal("show");
 	$("#btnClose").click(function(){
-		history.back();    
+		location.href="idSearch2.do"   
+	});
+	</script>
+</c:if>
+
+<c:if test="${empty memberVO.userid}">
+
+	<script>
+	$("#aa").text("존재하지 않는 아이디입니다.");
+	$("#myModal").modal("show");
+	$("#btnClose").click(function(){
+		location.href="idSearch2.do"   
 	});
 	</script>
 </c:if>

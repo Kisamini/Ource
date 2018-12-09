@@ -57,6 +57,12 @@ public class LoginController {
 		return "login/idSearch";
 	}
 	
+	//아이디찾는 첫화면2
+	@RequestMapping("idSearch2.do")
+	public String idSearch2() {
+		return "login/idSearch2";
+	}
+	
 	//아이디찾기 성공시 모달 띄어지는 화면
 	@RequestMapping("idSearchSuccess.do")
 	public String idSearchSuccess(MemberVO memberVO, ModelMap model) {
@@ -71,7 +77,7 @@ public class LoginController {
 	
 	//아이디확인 성공(비번 찾을 때)
 	@RequestMapping("idCheckOk.do")
-	public String idCheck(MemberVO memberVO, ModelMap model) {
+	public String idCheckOk(MemberVO memberVO, ModelMap model) {
 		memberVO = loginService.selectUser(memberVO);
 		model.addAttribute("memberVO", memberVO);
 		return "login/idCheckOk";
