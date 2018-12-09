@@ -1,0 +1,39 @@
+
+#modal_Fol_footer{
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+#friendListContainer{
+	width: 100%;
+	height: 100%;
+	text-align: center;
+}
+
+#friendTabContentSelection{
+	width: 100%;
+	height: 100%;
+	padding-top: 10px;
+	text-align:top;
+}
+
+.followingItem{
+	width: 100%;
+	height: 60px;
+	font-family: 'Hanna';
+	font-size: 20px;
+	display: block;
+} 
+
+.followerItem{
+	width: 100%;
+	height: 60px;
+	font-family: 'Hanna';
+	font-size: 20px;
+	display: block;
+}
+
+#friendIcon{
+	width: 40px;
+	hieght: 40px;
+}
