@@ -53,7 +53,8 @@
 #### Image 목록
   * **default_user_profile_img.png** -> 기본 프로필 이미지
   * **more1.png** -> **mypage_user_info.jsp** 에서의 더보기 버튼 이미지
-  * **logo_background_transparent.png** -> **mypage_top.jsp**의 home으로 가기 버튼의 이미지
+  * **ource_logo3_resized** -> **top_navigation_bar.jsp**의 home으로 가기 버튼의 이미지
+  * **3.png** -> **top_navigation_bar.jsp**의 배경 이미지
 - - -
 >### 그 외
 #### git에 올라가 있는 목록
