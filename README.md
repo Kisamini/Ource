@@ -4,7 +4,7 @@
 >### Mypage 첫 페이지
 #### mypage_main.jsp -> mypage 첫 화면, page import로 구성
 #### page import
-  * **mypage_top.jsp** -> 상단바
+  * **top_navigation_bar.jsp** -> 상단바
   * **mypage_profile.jsp** -> 프로필 이미지 
   
     * 이미지 수정 버튼 -> **mypage_profile_update.jsp**로 이동
@@ -18,7 +18,7 @@
 >### Mypage 이미지 수정 페이지
 #### mypage_profile_update.jsp  -> 이미지 수정 페이지, page import로 구성
 #### page import
-  * **mypage_top.jsp** -> 상단바
+  * **top_navigation_bar.jsp** -> 상단바
   * **mypage_profile_update.jsp** -> 프로필 이미지 
   
     * 이미지 수정 버튼 완료 -> **mypage_change_img.jsp** 로 이동 후 -> **mypage_profile.jsp** 로 이동
@@ -32,7 +32,7 @@
 #### CSS 목록
   * **bootstrap.css** -> **user_profile.jsp**에서  modal 사용 (Bootstrap v4.1.3)
   * **main.css** -> 중앙정렬 CSS
-  * **top_nav.css** -> 상단바 CSS
+  * **top_navigation_bar.css** -> 상단바 CSS
   * **user_friends.css** -> 친구 목록 CSS
   * **user_info.css** -> 내정보 CSS
   * **user_nav.css** -> 네비게이션 CSS
