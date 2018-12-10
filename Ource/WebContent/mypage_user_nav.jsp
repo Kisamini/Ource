@@ -7,14 +7,14 @@
 <fmt:requestEncoding value="utf-8" />
 <sql:setDataSource driver="oracle.jdbc.driver.OracleDriver" 
 					url="jdbc:oracle:thin:@52.79.235.41:1521:xe" 
-					user="ksm" 
-					password="ource"
+					user="ource" 
+					password="ourvoice"
 					var="conn"/>
     <script src="script/user_nav.js"></script>
     <link rel="stylesheet" type="text/css" href="css/user_nav.css">
 <c:catch var="error">
 	 <sql:query dataSource = "${conn}" var = "friends">
-            select a.id, a.username, b.profile_img from user_profile a, user_profile_img b where a.id = b.id and a.id != ?
+            select a.user_id, a.user_name, b.profile_img from users a, user_profile_img b where a.user_id = b.id and a.user_id != ?
             <sql:param>${param.id}</sql:param>
          </sql:query>
 </c:catch>

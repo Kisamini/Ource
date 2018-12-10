@@ -5,6 +5,7 @@
 <c:url value="mypage_profile.jsp" var="profile" />
 <c:url value="mypage_user_nav.jsp" var="user_nav" />
 <c:url value="mypage_user_friends.jsp" var="user_friends" />
+<c:set var="getId" value="${param.id }" scope="session"/>
 <c:if test="${sessionScope.sessionId == null}">
 <script>
 	alert('로그인을 해야 이용하실수 있습니다.');

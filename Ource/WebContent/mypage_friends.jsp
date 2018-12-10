@@ -6,16 +6,16 @@
 <fmt:requestEncoding value="utf-8" />
 <sql:setDataSource driver="oracle.jdbc.driver.OracleDriver" 
 					url="jdbc:oracle:thin:@52.79.235.41:1521:xe" 
-					user="ksm" 
-					password="ource"
+					user="ource" 
+					password="ourvoice"
 					var="conn"/>
 
 <!-- 자신의 친구 -->
 <c:if test="${sessionScope.getId eq sessionScope.sessionId }">
 <c:catch var="error">
 	 <sql:query dataSource = "${conn}" var = "names">
-            select a.id, a.username, b.profile_img from user_profile a, user_profile_img b where a.id = b.id and a.id != ?
-            <sql:param>${sessionScope.getId}</sql:param>
+            select a.user_id, a.user_name, b.profile_img from users a, user_profile_img b where a.user_id = b.user_id and a.user_id != ?
+            <sql:param>${param.id}</sql:param>
          </sql:query>
 </c:catch>
 </c:if>

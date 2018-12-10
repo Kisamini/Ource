@@ -11,12 +11,12 @@
 <fmt:requestEncoding value="utf-8" />
 <sql:setDataSource driver="oracle.jdbc.driver.OracleDriver" 
 					url="jdbc:oracle:thin:@52.79.235.41:1521:xe" 
-					user="ksm" 
-					password="ource"
+					user="ource" 
+					password="ourvoice"
 					var="conn"/>
 <c:catch var="error">
 	 <sql:query dataSource = "${conn}" var = "profile">
-            select profile_img, background_img from user_profile_img where id=?
+            select profile_img, background_img from user_profile_img where user_id=?
             <sql:param>${sessionScope.sessionId}</sql:param>
          </sql:query>
 </c:catch>
@@ -26,11 +26,10 @@
 <c:set var="oldBackgroundImg1" value="${rs.background_img }" />
 </c:forEach>
 <%
+	request.setCharacterEncoding("utf-8");
 	String id = request.getSession().getAttribute("sessionId").toString()+"/";
 	String dbProfileImg = pageContext.getAttribute("oldProfileImg1").toString();
 	String dbBackgroundImg = pageContext.getAttribute("oldBackgroundImg1").toString();
-
-    request.setCharacterEncoding("UTF-8");
  
     // 10Mbyte 제한
     int maxSize  = 1024*1024*100;       
@@ -131,12 +130,12 @@
 
 <sql:setDataSource driver="oracle.jdbc.driver.OracleDriver" 
 					url="jdbc:oracle:thin:@52.79.235.41:1521:xe" 
-					user="ksm" 
-					password="ource"
+					user="ource" 
+					password="ourvoice"
 					var="conn"/>
 <c:catch var="error">
 	<sql:update dataSource = "${conn}" var = "insertimg">
-         UPDATE user_profile_img set profile_img = ?, background_img = ? where id = ?
+         UPDATE user_profile_img set profile_img = ?, background_img = ? where user_id = ?
          <sql:param><%=newFileName2 %></sql:param>
          <sql:param><%=newFileName1 %></sql:param>
          <sql:param>${sessionScope.sessionId}</sql:param>

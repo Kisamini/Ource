@@ -6,32 +6,32 @@
 <fmt:requestEncoding value="utf-8" />
 <sql:setDataSource driver="oracle.jdbc.driver.OracleDriver" 
 					url="jdbc:oracle:thin:@52.79.235.41:1521:xe" 
-					user="ksm" 
-					password="ource"
+					user="ource" 
+					password="ourvoice"
 					var="conn"/>
 
 <c:catch var="error1">
 <!-- img file찾는 sql -->
 	 <sql:query dataSource = "${conn}" var = "profile">
-            select profile_img, background_img from user_profile_img where id=?
+            select profile_img, background_img from user_profile_img where user_id=?
             <sql:param>${param.id }</sql:param>
          </sql:query>
 <!-- img file찾는 sql -->
 
 <!-- follower sql -->
 	 <sql:query dataSource = "${conn}" var = "follower">
-	 		select b.mem_id, a.username, c.profile_img
-			from user_profile a, user_follow b, user_profile_img c
-			where a.id = b.mem_id and b.mem_id = c.id and b.target_mem_id = ?
+	 		select b.mem_id, a.user_name, c.profile_img
+			from users a, user_follow b, user_profile_img c
+			where a.user_id = b.mem_id and b.mem_id = c.user_id and b.target_mem_id = ?
             <sql:param>${param.id }</sql:param>
          </sql:query>
 <!-- follower sql -->
 
 <!-- following sql -->
 	 <sql:query dataSource = "${conn}" var = "following">
-        	select b.target_mem_id, a.username, c.profile_img
-			from user_profile a, user_follow b, user_profile_img c
-			where a.id = b.target_mem_id and b.target_mem_id = c.id and b.mem_id = ?
+        	select b.target_mem_id, a.user_name, c.profile_img
+			from users a, user_follow b, user_profile_img c
+			where a.user_id = b.target_mem_id and b.target_mem_id = c.user_id and b.mem_id = ?
             <sql:param>${param.id }</sql:param>
          </sql:query>
 <!-- following sql -->
@@ -114,13 +114,13 @@
       		<c:if test="${show_follower_users.profile_img eq '0'}">
 		      <li class="follower_li"><a href="mypage_main.jsp?id=${show_follower_users.mem_id}">
 		      <img class="user_follower_img" draggable="false" src="images/default_user_profile_img.png" alt="친구 이미지">
-		      ${show_follower_users.username}</a>
+		      ${show_follower_users.user_name}</a>
 		      </li>
 		 	</c:if>
 		 	<c:if test="${show_follower_users.profile_img ne '0'}">
 		      <li class="follower_li"><a href="mypage_main.jsp?id=${show_follower_users.mem_id}">
 		      <img class="user_follower_img" draggable="false" src="<c:url value='upload/${show_follower_users.mem_id}/${show_follower_users.profile_img}'/>" alt="친구 이미지">
-		      ${show_follower_users.username}</a>
+		      ${show_follower_users.user_name}</a>
 		      </li>
 		 	</c:if>
 	     </c:forEach>
@@ -129,13 +129,13 @@
 			<c:if test="${show_following_users.profile_img eq '0'}">
 				<li class="following_li"><a href="mypage_main.jsp?id=${show_following_users.target_mem_id}">
 			      <img class="user_following_img" draggable="false" src="images/default_user_profile_img.png" alt="친구 이미지">
-			      ${show_following_users.username}</a>
+			      ${show_following_users.user_name}</a>
 			      </li>
 			</c:if>
 			<c:if test="${show_following_users.profile_img ne '0'}">
 				<li class="following_li"><a href="mypage_main.jsp?id=${show_following_users.target_mem_id}">
 		      	<img class="user_following_img" draggable="false" src="<c:url value='upload/${show_following_users.target_mem_id}/${show_following_users.profile_img}'/>" alt="친구 이미지">
-		      	${show_following_users.username}</a>
+		      	${show_following_users.user_name}</a>
 		      	</li>
 		      </c:if>
 		</c:forEach>

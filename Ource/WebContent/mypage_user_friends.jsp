@@ -6,15 +6,15 @@
 <fmt:requestEncoding value="utf-8" />
 <sql:setDataSource driver="oracle.jdbc.driver.OracleDriver" 
 					url="jdbc:oracle:thin:@52.79.235.41:1521:xe" 
-					user="ksm" 
-					password="ource"
+					user="ource" 
+					password="ourvoice"
 					var="conn"/>
 
 <!-- 자신의 친구 -->
 <c:if test="${param.id eq sessionScope.sessionId }">
 <c:catch var="error">
 	 <sql:query dataSource = "${conn}" var = "names">
-            select a.id, a.username, b.profile_img from user_profile a, user_profile_img b where a.id = b.id and a.id != ?
+            select a.user_id, a.user_name, b.profile_img from users a, user_profile_img b where a.user_id = b.user_id and a.user_id != ?
             <sql:param>${param.id}</sql:param>
          </sql:query>
 </c:catch>
@@ -37,10 +37,10 @@
           <ul>
           	<c:forEach items="${names.rows}" var="friends">
           	<c:if test="${friends['profile_img'] eq '0'}" >
-            	<li><a href="mypage_main.jsp?id=${friends.id}"><img id="user_friends_img" src="images/default_user_profile_img.png" alt="친구 이미지" draggable="false">${friends.username}</a></li>
+            	<li><a href="mypage_main.jsp?id=${friends.user_id}"><img id="user_friends_img" src="images/default_user_profile_img.png" alt="친구 이미지" draggable="false">${friends.user_name}</a></li>
             </c:if>
             <c:if test="${friends['profile_img'] ne '0'}" >
-            	<li><a href="mypage_main.jsp?id=${friends.id}"><img id="user_friends_img" draggable="false" src="<c:url value='upload/${id}/${friends.profile_img}'/>" alt="친구 이미지">${friends.username}</a></li>
+            	<li><a href="mypage_main.jsp?id=${friends.user_id}"><img id="user_friends_img" draggable="false" src="<c:url value='upload/${id}/${friends.profile_img}'/>" alt="친구 이미지">${friends.user_name}</a></li>
             </c:if>
             </c:forEach>
           </ul>

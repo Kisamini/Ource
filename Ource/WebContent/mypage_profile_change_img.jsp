@@ -6,12 +6,12 @@
 <fmt:requestEncoding value="utf-8" />
 <sql:setDataSource driver="oracle.jdbc.driver.OracleDriver" 
 					url="jdbc:oracle:thin:@52.79.235.41:1521:xe" 
-					user="ksm" 
-					password="ource"
+					user="ource" 
+					password="ourvoice"
 					var="conn"/>
 <c:catch var="error">
 	 <sql:query dataSource = "${conn}" var = "profile">
-            select profile_img, background_img from user_profile_img where id=?
+            select profile_img, background_img from user_profile_img where user_id=?
             <sql:param>${sessionScope.sessionId}</sql:param>
          </sql:query>
 </c:catch>

@@ -6,13 +6,13 @@
 
 <fmt:requestEncoding value="utf-8" />
 <sql:setDataSource driver="oracle.jdbc.driver.OracleDriver" 
-          url="jdbc:oracle:thin:@52.79.235.41:1521:xe" 
-          user="ksm" 
-          password="ource"
-          var="conn"/>
+					url="jdbc:oracle:thin:@52.79.235.41:1521:xe" 
+					user="ource" 
+					password="ourvoice"
+					var="conn"/>
 <c:catch var="error">
    <sql:query dataSource = "${conn}" var = "profile">
-            select a.username, b.profile_img from user_profile a, user_profile_img b where a.id = b.id and a.id = ?
+            select a.user_name, b.profile_img from users a, user_profile_img b where a.user_id = b.user_id and a.user_id = ?
             <sql:param>${sessionScope.sessionId }</sql:param>
          </sql:query>
 </c:catch>
@@ -42,10 +42,10 @@
               <div class="top_goto_mypage">
               <c:forEach items="${profile.rows}" var="my">
                 <c:if test="${my.profile_img eq '0'}">
-                <a id="dropDownHref2" href="#"><img src="images/default_user_profile_img.png" draggable="false">${my.username}</a>
+                <a id="dropDownHref2" href="#"><img src="images/default_user_profile_img.png" draggable="false">${my.user_name}</a>
                 </c:if> 
                 <c:if test="${my.profile_img ne '0'}">
-                <a href="#"><img src="<c:url value='upload/${sessionScope.sessionId}/${my.profile_img}'/>" draggable="false">${my.username}</a>
+                <a href="#"><img src="<c:url value='upload/${sessionScope.sessionId}/${my.profile_img}'/>" draggable="false">${my.user_name}</a>
                 </c:if>
                 <div class="top_dropdown">
                   <a id="dropDownHref" href="mypage_main.jsp?id=${sessionScope.sessionId }">마이 페이지</a>
