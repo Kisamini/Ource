@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<c:url value="mypage_top.jsp" var="top_nav" />
+<c:url value="top_navigation_bar.jsp" var="top_nav" />
 <c:url value="mypage_profile.jsp" var="profile" />
 <c:url value="mypage_user_nav.jsp" var="user_nav" />
 <c:url value="mypage_user_friends.jsp" var="user_friends" />

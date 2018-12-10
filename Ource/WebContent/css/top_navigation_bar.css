@@ -1,4 +1,4 @@
-    /*----------------top_nav css---------------------*/
+ /*----------------top_nav css---------------------*/
 .top_nav{
   z-index:90;
   position:fixed;
@@ -9,11 +9,13 @@
 }
 .top_nav>.go_home img{
   position:absolute;
-  top:-55px;
-  height: 200px;
-  width:270px;
+  height: 80px;
+  width: 150px;
+  
+  top:10px;
+  margin-left: 15px;
+  margin-right: 15px;
 
-  /*overflow-y: hidden;*/
 }
 .top_search{
   width: 100px;
@@ -21,7 +23,7 @@
   white-space: nowrap;
   position: absolute;
   top:30px;
-  left: 30%;
+  left: 190px;
 }
 .top_search input#search{
   width: 200px;
@@ -54,29 +56,33 @@
     outline:none;
     background: #FFF;
   }
-  .top_items{
-     position: absolute;
-    right: 5%;
-    top: 30px; 
-  }
-  .top_goto_mypage{
-    position:absolute;
-    left: 60%;
-    top: 25px;
-  }
-  .top_goto_mypage>a:link,.top_goto_mypage>a:hover,.top_goto_mypage>a:visited{
-    text-decoration: none;
-    color:#FFF;
-    font-size: 20px;
-    font-weight: bolder;
-  }
+  
+.top_items{
+   position: absolute;
+	right: 5%;
+  top: 30px; 
+}
+
+.top_goto_mypage{
+  position:absolute;
+  right: 25%;
+  top: 25px;
+}
+
+.top_goto_mypage>a:link,.top_goto_mypage>a:hover,.top_goto_mypage>a:visited{
+  text-decoration: none;
+  color:#FFF;
+  font-size: 20px;
+  font-weight: bolder;
+}
+  
 .top_goto_mypage top_dropdown>a:link,.top_goto_mypage top_dropdown>a:visited{
     text-decoration: none;
     color:#2866d8;
     font-size: 20px;
     font-weight: bolder;
   }
-
+  
   .top_nav>.top_goto_mypage img{
    width: 40px; 
    height: 40px;
@@ -85,9 +91,11 @@
    border-radius: 50%;
    margin-right:5px;
 }
+
 .top_goto_mypage:hover .top_dropdown{
   display: block;
 }
+
 .top_dropdown{
     display: none;
     position: absolute;
@@ -95,7 +103,9 @@
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 101;
+
 }
+
 .top_dropdown:after {
     content: '';
     position: absolute;
@@ -105,11 +115,13 @@
     top: -9px;
     left: 60px;
 }
+
 .top_dropdown a:hover {
   background-color: #2866d8;
   color:#fff;
 
   }
+  
 .top_dropdown>a:link{
     color: #2866d8;
     padding: 5px 12px;
@@ -119,31 +131,38 @@
     font-size:20px;
     font-weight: bolder;
 }
+
 .top_items i{
   color:#FFF;
 }
+
 .top_items i:hover{
   color:#212529;
 }
- @media screen and (min-width: 1184px) {
+
+/* 모바일 사이즈 */
+@media screen and (max-width: 440px){ 
   .top_search{
-    left: 30%;
+    display: none;
   }
-} 
- @media screen and (max-width: 470px) {
   .top_items{
     display: none;
   }
-} 
-@media screen and (max-width: 713px) {
-  .top_search{
+}
+@media screen and (max-width: 540px) and (min-width: 441px){
+.top_search{
     display: none;
   }
-   .top_items{
-    left: 70%;
+  .top_goto_mypage{
+    right:40%;
+  }
+}
+@media screen and (max-width: 660px) and (min-width: 500px){
+.top_search{
+    display: none;
   }
   .top_goto_mypage{
-    left: 50%;
+    right:50%;
   }
 }
 
