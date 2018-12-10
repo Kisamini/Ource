@@ -160,13 +160,16 @@
     width: 100%;
   }
   .follower{
-    left:193px;
+    left:160px;
   }
   .following{
-    left:300px;
+    left:270px;
+  }
+  .change_img,.replace{
+    width:150px;
   }
 }
-/* ëª¨ë°”ì¼ ì‚¬ì´ì¦ˆ */
+/* ¸ğ¹ÙÀÏ »çÀÌÁî */
 @media screen and (max-width: 420px) and (min-width: 419px){ 
   #header{
     left:0;
@@ -178,6 +181,7 @@
   .following{
     left:300px;
   }
+  
 }
 @media screen and (max-width: 798px)and (min-width: 421px){
   #header{
@@ -185,7 +189,7 @@
     width: 100%;
   }
 }
-/* í…Œë¸”ë¦¿ ì‚¬ì´ì¦ˆ */
+/* Å×ºí¸´ »çÀÌÁî */
 @media screen and (max-width: 800px)and (min-width: 799px){
   #header{
     left:0;
