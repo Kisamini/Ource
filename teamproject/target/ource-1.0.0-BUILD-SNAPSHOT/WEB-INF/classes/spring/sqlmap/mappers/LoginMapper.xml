@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.ource.login.service.impl.LoginMapper">
+	
+	<!--로그인   -->
+	<select id="userLogin" parameterType="memberVO" resultType="int">
+		SELECT COUNT(*) FROM USERS WHERE USER_ID = #{userid} AND USER_PW = #{passwd} 
+	</select>
+	
+	<!--아이디로 검사. 로그인성공  -->
+	<select id="selectUser" parameterType="memberVO" resultType="memberVO">
+	   SELECT USER_NAME name, USER_ID userid, USER_BIRTH birth, USER_ANSWER answer, USER_QUEST quest FROM USERS 
+	   WHERE USER_ID = #{userid} 
+	</select>
+	
+	<!--이름으로 검사. 아이디찾기 성공  -->
+	<select id="selectUser2" parameterType="memberVO" resultType="memberVO">
+		SELECT USER_NAME name, USER_ID userid, USER_BIRTH birth, USER_ANSWER answer, USER_QUEST quest FROM USERS WHERE USER_NAME = #{name}
+	</select>
+	
+	<!--아이디찾기  -->
+	<select id="searchId" parameterType="memberVO" resultType="int">
+	   SELECT COUNT(*) FROM USERS WHERE USER_NAME = #{name} AND USER_BIRTH = #{birth}
+	</select>
+	
+	<select id="searchPw" parameterType="memberVO" resultType="memberVO">
+		SELECT USER_ID userid, USER_PW passwd FROM USERS 
+	   WHERE USER_ID = #{userid} AND USER_ANSWER = #{answer}
+	</select>
+</mapper>
