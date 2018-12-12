@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 사용할 인터페이스 class -->
+<mapper namespace="com.ource.sns.mypage.service.impl.MypageMapper">
+	<select id="selectTop" resultType="mypageVO" parameterType="String">
+		 select a.user_name, b.profile_img 
+		 from users a, user_profile_img b 
+		 where a.user_id = b.user_id and a.user_id = #{_sessionid}
+	</select>
+	<select id="getImg" resultType="mypageVO" parameterType="String">
+		 select profile_img, background_img 
+		 from user_profile_img 
+		 where user_id= #{_sessionid}
+	</select>
+	<update id="updateImg" parameterType="map">
+	 UPDATE user_profile_img set ${col}=#{value} where user_id = #{sessionId}
+	</update>
+	<insert id="toFollow" parameterType="map">
+		insert into user_follow 
+		values(USER_FOLLOW_AUTO_INC.nextval,#{sessionId},#{id},sysdate)
+	</insert>
+	<delete id="toUnfollow" parameterType="map">
+		delete from user_follow where mem_id = #{sessionId} and target_mem_id = #{id}
+	</delete>
+	<select id="getFollower" resultType="mypageVO" parameterType="String">
+		 select b.mem_id, a.user_name, c.profile_img
+			from users a, user_follow b, user_profile_img c
+			where a.user_id = b.mem_id and b.mem_id = c.user_id and b.target_mem_id = #{_id}
+	</select>
+	<select id="getFollowing" resultType="mypageVO" parameterType="String">
+		select b.target_mem_id, a.user_name, c.profile_img
+			from users a, user_follow b, user_profile_img c
+			where a.user_id = b.target_mem_id and b.target_mem_id = c.user_id and b.mem_id = #{_id}
+	</select>
+	<select id="getFollowingCount" resultType="int" parameterType="String">
+			select count(b.target_mem_id)
+			from users a, user_follow b, user_profile_img c
+			where a.user_id = b.target_mem_id and b.target_mem_id = c.user_id and b.mem_id = #{_id}
+	</select>
+	<select id="getFollowerCount" resultType="int" parameterType="String">
+			select count(b.mem_id)
+			from users a, user_follow b, user_profile_img c
+			where a.user_id = b.target_mem_id and b.target_mem_id = c.user_id and b.target_mem_id = #{_id}
+	</select>
+</mapper>

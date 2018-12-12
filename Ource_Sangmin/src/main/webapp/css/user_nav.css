@@ -1,0 +1,101 @@
+
+/*----------------user_nav css---------------------*/
+.user_nav{
+  position:absolute;
+  top:400px;
+  right: 25%;
+  background-color: #fff;
+  width: 900px;
+  float: left;
+}
+.user_nav ul{
+  list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+} 
+.menu{  
+    height: 30px; 
+    width: 100%;
+    background-color: #2866d8;
+    } 
+  .menu li{ 
+    width: 50%;
+    float: left;
+    color: white;
+    background-color: #2866d8;
+    display: block;
+    line-height: 30px;
+    text-align: center;
+     border-right:1px solid #bbb;
+    } 
+   .menu li:last-child {
+    border-right: none;
+}
+  .menu .menulink{  
+    text-decoration:none;
+    color: white;
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+    } 
+
+  .menu .menulink:hover:not(.menu_active) {
+    background-color: #0248ca;
+    color: white; 
+}
+
+.menu_active {
+    background-color: #41acf4;
+}
+
+@media screen and (max-width:418px){ 
+  .user_nav{
+    left:0;
+    width: 100%;
+  }
+ .contents{
+    width:100%;
+  }
+}
+/* 모바일 사이즈 */
+@media screen and (max-width: 420px) and (min-width: 419px){ 
+  .user_nav{
+    left:0px;
+     width: 420px;
+  }
+  .contents{
+    width:420px;
+  }
+}
+@media screen and (max-width: 798px) and (min-width: 421px){
+ .user_nav{
+   left:0px;
+   width:100%;
+  }
+  .contents{
+    width:100%;
+  }
+}
+/* 테블릿 사이즈 */
+@media screen and (max-width: 800px)and (min-width: 799px){
+ .user_nav{
+   left:0px;
+     width: 800px;
+  }
+  .contents{
+    width:800px;
+  }
+}
+@media screen and (max-width: 899px)and (min-width: 801px){
+   .user_nav{
+    left:0;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1217px){
+  .user_nav{
+     left:0px;
+  }
+}
+/*----------------user_nav css---------------------*/
