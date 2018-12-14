@@ -8,14 +8,17 @@
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
 	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
 	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
 	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
 	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-	<link rel="stylesheet" type="text/css" href="css/util1.css">
-	<link rel="stylesheet" type="text/css" href="css/main1.css">
+	<link rel="stylesheet" type="text/css" href="css/idSearch1.css">
+	<link rel="stylesheet" type="text/css" href="css/idSearch.css">
 	<link rel="stylesheet" href="css/min.css">
+	<link href="https://fonts.googleapis.com/css?family=Black+Han+Sans" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Black+Han+Sans|Noto+Sans+KR" rel="stylesheet">
 	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 	<script src="vendor/animsition/js/animsition.min.js"></script>
 	<script src="vendor/bootstrap/js/popper.js"></script>
@@ -136,9 +139,7 @@
    
   <!--아이디찾기  -->
 	<div class="container-contact100">
-       
 		<div class="wrap-contact100">
-		<!-- <form class="contact100-form" method="post"> -->
 				<span class="contact100-form-title">
 					아이디 찾기
 				</span>
@@ -161,10 +162,10 @@
 						</span>
 					</button>
 				</div>
-			<!-- </form> -->
+				</div>
 			
 			<!--비밀번호 찾기  -->
-	
+			<div class="wrap-contact101">
 				<span class="contact100-form-title">
 					비밀번호 찾기
 				</span>
@@ -198,7 +199,7 @@
 						</span>
 					</button>
 				</div>
-				
+				</div>
 				</div>
 		</div>
 	</div>

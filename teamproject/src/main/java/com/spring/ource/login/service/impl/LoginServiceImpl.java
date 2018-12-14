@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import com.spring.ource.login.service.LoginService;
 import com.spring.ource.login.service.MemberVO;
 
+//해당 서비스에 맞는 데이터를 불러오기 위해 DAO 호출
 @Service
 public class LoginServiceImpl implements LoginService {
 
