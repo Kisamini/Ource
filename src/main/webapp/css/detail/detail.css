@@ -1,0 +1,36 @@
+@CHARSET "UTF-8";
+.detail {position:fixed;opacity:0;transition-property: width,height, opacity;transition-delay: 300ms;transition-duration: 500ms;}
+.cover {background:rgba(0, 0, 0, .9);width:100%;height:100%;z-index:1;position: absolute;}
+.detailBox {opacity:0;transition-property: opacity;transition-delay: 300ms;transition-duration: 500ms;z-index:2;}
+.detailCon {background: #000;}
+.detailBox {display:flex;width: fit-content;margin: auto;position:  relative;}
+.profileBox {display:inline-block;}
+.postContentBox {width:360px;background:  #fff;position:  relative;border-left:  1px solid #b1b1b1;}
+.profileBox img {width:40px;height:40px;border-radius:100%;float:  left;}
+.userinfoBox {float:left;margin-left: 11px;}
+.userinfoBox p {margin: 0;}
+.userinfoBox p:first-child {line-height:10px;margin-bottom:10px;font-size:18px;color:#020692;}
+.userinfoBox p:last-child {font-size:13px;color:#9b9b9b;} 
+.postTopBox {padding:20px;padding-bottom:  0;}
+.contentBox {margin-top:30px;min-height: 265px;}
+.commentProfileBox img, .commentViewProfile img {width:32px;height:32px;border-radius:100%;}
+.commentBox {position:absolute;bottom:0;width:  100%;padding: 10px 20px;border-top: 1px solid #b1b1b1;box-sizing:  border-box;background: #ededed;}
+.commentBox>div:first-child {float:left;height:  32px;}
+.commentWriteBox {width:100%;padding-left: 45px;box-sizing:border-box;}
+.commentWriteBox textarea {width:100%;resize:  none;border-radius: 50px;border: 1px solid #b1b1b1;padding: 7px 10px;box-sizing:  border-box;height:  32px;outline:  none;}
+
+.likeDiv {display:flex;margin-top:30px;border-top:1px solid #c2c2c2;border-bottom: 1px solid #c2c2c2;padding: 10px 7px;font-size: 17px;justify-content: space-between;color: #6a6a6a;font-weight:  bold;}
+.likeDiv i:first-child {display:none;}
+.commentTempDiv {/* margin-left:20px; */}
+.likeDiv .commentTempDiv i:first-child {display: inline-block;}
+.likeDiv.on i:last-child {display:none;}
+.likeDiv span {margin-left: 8px;}
+.commentTotalDiv {color: #5c5c5c;}
+.commentViewList {clear:left;margin: 10px 0;}
+.commentViewContent {width:  100%;padding-left:  45px;box-sizing:  border-box;}
+.commentViewContent>div:first-child {background: #ededed;border-radius: 50px;padding: 5px 10px;padding-right:  0px;}
+.commentViewContent>div:last-child {margin-top:5px;font-size:13px;} 
+.commentViewContent>div:last-child>span:first-child:after, .commentViewContent>div:last-child>span:first-child + span:after {content: '·';margin: 0 6px;} 
+.commentViewContent>div:first-child>span:first-child {font-size: 15px;color:#020692;margin-right:  10px;}
+.commentViewContent span:last-child {font-size:13px;word-wrap: break-word;color:  #000;}
+.commentViewProfile {line-height:  32px;float:  left;}

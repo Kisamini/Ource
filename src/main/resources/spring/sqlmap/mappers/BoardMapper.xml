@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.spring.board.service.impl.BoardMapper">
+
+	<resultMap type="camelMap" id="resultMap">
+		<result property="postsContents" column="POSTS_CONTENTS" javaType="string" jdbcType="CLOB"/>
+	</resultMap>
+	
+	<insert id="upload" parameterType="com.spring.board.service.BoardVO">
+		INSERT ALL
+		<foreach collection="imgs" item="item">
+			into post_img(POSTS_NUM, POSTS_IMG)
+			values (1, #{item})
+		</foreach>
+		SELECT *
+      		FROM DUAL
+	</insert>
+	
+	<select id="select" parameterType="map" statementType="CALLABLE">
+		{ call SELECT_POST(
+		  	#{resultList, mode=OUT, jdbcType=CURSOR, javaType=ResultSet, resultMap = resultMap}
+		  )
+		}
+	</select>	
+	
+	<resultMap type="camelMap" id="blobMap"></resultMap>
+	
+	<select id="selectPostsInfo" parameterType="map" statementType="CALLABLE">
+		{
+			call POSTS_INFO (
+				#{fileId},
+				#{result, mode=OUT, jdbcType = CURSOR, javaType = ResultSet, resultMap = blobMap}
+			)
+		}
+	</select>
+	
+	<select id="selectBoardDetailInfo" parameterType="map" statementType="CALLABLE">
+		{
+			call DETAIL_SELECT(
+				#{postNum},
+				#{detail, mode = OUT, jdbcType = CURSOR, javaType = ResultSet, resultMap = resultMap}
+			)
+		}
+	</select>
+	
+	<resultMap type="camelMap" id="commenetMap">
+		<result column="COMMENTS_CONTENTS" javaType="string" jdbcType="CLOB" property="COMMENTS_CONTENTS"/>
+	</resultMap>
+	
+	<select id="selectCommentList" parameterType="map" statementType="CALLABLE">
+		{
+			call SELECT_COMMENT(
+				#{page},
+				#{userid},
+				#{postNum},
+				#{rowCount},
+				#{comments, mode = OUT, jdbcType = CURSOR, javaType = ResultSet, resultMap = commenetMap}
+			)
+		}
+	</select>
+	
+	<select id="selectCommentTotal" parameterType="map" statementType="CALLABLE">
+		{
+			call SELECT_COMMENT_TOTAL(
+				#{postNum},
+				#{commentTotal, mode = OUT, jdbcType = INTEGER, javaType = int}
+			)
+		}
+	</select>
+</mapper>
