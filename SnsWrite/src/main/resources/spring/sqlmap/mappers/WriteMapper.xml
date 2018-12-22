@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.ource.write.service.impl.WriteMapper">
+	
+	<!--사진 저장  -->
+	<insert id="fileUpload" parameterType="WriteVO">
+        <selectKey keyProperty="seq" order="BEFORE" resultType="int">
+        	SELECT POST_IMG_SEQ.nextval seq FROM dual
+        </selectKey>
+         insert into post_img(POSTS_SEQ, POSTS_IMG)
+         values (#{seq}, #{postsImgs[0]})		                         
+	</insert>
+	
+	<!--아이디, 글작성시간, 글, 공유타입 저장  -->
+	<insert id="contentsUpload" parameterType="map">
+		<selectKey keyProperty="seq" order="BEFORE" resultType="int">
+        	SELECT POSTS_NUM_SEQ.nextval seq FROM dual
+        </selectKey>
+        INSERT INTO POSTS VALUES(#{seq}, #{userId}, to_char(sysdate, 'YYYY-MM-DD HH24:MI:SS'), #{postsContents}, #{shareType}) 
+	</insert>
+	
+	<!--이 사진은 이 게시글의 사진이다  -->
+	<update id="updateFileImg" parameterType="map">
+		UPDATE POST_IMG SET POSTS_NUM = #{seq} 
+		WHERE POSTS_SEQ IN 
+		<foreach collection="imgSeq" open="(" close=")" separator="," item="item">
+			#{item}
+		</foreach>
+	</update>
+
+  	<!--프로필 불러오기  -->  
+ 	<select id="getProfile" parameterType="map" resultType="map">
+ 		SELECT PROFILE_IMG, USER_ID FROM USER_PROFILE_IMG WHERE USER_ID = #{userid}
+ 	</select>
+
+</mapper>

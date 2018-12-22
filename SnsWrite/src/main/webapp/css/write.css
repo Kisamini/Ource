@@ -1,0 +1,19 @@
+.dropzone .dz-preview:hover .dz-image img {
+      -webkit-transform: inherit;
+      -moz-transform: inherit;
+      -ms-transform: inherit;
+      -o-transform: inherit;
+      transform: inherit;
+      -webkit-filter:inherit;
+      filter: inherit; }
+      
+.dz-image~div{display: none;}
+
+.dropzone{display: block; width:100%}
+
+.selectShare{font-family: 'Roboto', sans-serif;}
+
+#shareText{font-size:1em}
+
+.alert-danger{background-color: #EDEAE3; border:none; color:black; font-family: 'Roboto', sans-serif;}
+
